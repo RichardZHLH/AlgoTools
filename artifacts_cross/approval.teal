@@ -1,0 +1,2764 @@
+#pragma version 8
+intcblock 0 1 2 27 65536 2147483931
+bytecblock 0x 0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141 0x6f776e6572 0x66656550726f7879 0x6f7261636c6541646d696e 0x7570646174654f776e6572 0x68616c746564 0x00 0x068101 0x696e697469616c697a6564
+txn NumAppArgs
+intc_0 // 0
+==
+bnz main_l48
+txna ApplicationArgs 0
+pushbytes 0x94ae5db8 // "addAdmin(address)void"
+==
+bnz main_l47
+txna ApplicationArgs 0
+pushbytes 0x6f8a3645 // "removeAdmin(address)void"
+==
+bnz main_l46
+txna ApplicationArgs 0
+pushbytes 0xbba844a5 // "transferOwner(address)void"
+==
+bnz main_l45
+txna ApplicationArgs 0
+pushbytes 0x176caa1f // "transferUpdateOwner(address)void"
+==
+bnz main_l44
+txna ApplicationArgs 0
+pushbytes 0x68d2460f // "transferOracleAdmin(address)void"
+==
+bnz main_l43
+txna ApplicationArgs 0
+pushbytes 0x92a3f121 // "setHalt(uint64)void"
+==
+bnz main_l42
+txna ApplicationArgs 0
+pushbytes 0x94a9c3a2 // "setTokenPairFee(uint64,uint64)void"
+==
+bnz main_l41
+txna ApplicationArgs 0
+pushbytes 0x5df71d12 // "setTokenPairFees(uint64[],uint64[])void"
+==
+bnz main_l40
+txna ApplicationArgs 0
+pushbytes 0xe1ee9822 // "setFee(uint64,uint64,uint64,uint64)void"
+==
+bnz main_l39
+txna ApplicationArgs 0
+pushbytes 0x95abcbe0 // "setFees(uint64[],uint64[],uint64[],uint64[])void"
+==
+bnz main_l38
+txna ApplicationArgs 0
+pushbytes 0xbbcf72a1 // "userLock(byte[32],uint64,string,uint64)void"
+==
+bnz main_l37
+txna ApplicationArgs 0
+pushbytes 0x51103705 // "setSmgFeeProxy(address)void"
+==
+bnz main_l36
+txna ApplicationArgs 0
+pushbytes 0xd0105ce4 // "acquireReadySmgInfo(byte[32])byte[64]"
+==
+bnz main_l35
+txna ApplicationArgs 0
+pushbytes 0xd193e2ee // "smgRelease(byte[32],byte[32],uint64,uint64,uint64,uint64,address,byte[64],byte[32])void"
+==
+bnz main_l34
+txna ApplicationArgs 0
+pushbytes 0x0860bdbc // "opt_in_token_id(uint64)void"
+==
+bnz main_l33
+txna ApplicationArgs 0
+pushbytes 0xb8eb2e53 // "addTokenPair(uint64,uint64,byte[],uint64,byte[])void"
+==
+bnz main_l32
+txna ApplicationArgs 0
+pushbytes 0x24aba328 // "removeTokenPair(uint64)void"
+==
+bnz main_l31
+txna ApplicationArgs 0
+pushbytes 0xbd9f92e8 // "updateTokenPair(uint64,uint64,byte[],uint64,byte[])void"
+==
+bnz main_l30
+txna ApplicationArgs 0
+pushbytes 0x4db7aa76 // "initialize(address,address,address,address,address)void"
+==
+bnz main_l29
+txna ApplicationArgs 0
+pushbytes 0xa0e81872 // "update()void"
+==
+bnz main_l28
+txna ApplicationArgs 0
+pushbytes 0x24378d3c // "delete()void"
+==
+bnz main_l27
+txna ApplicationArgs 0
+pushbytes 0x48df732d // "setStoremanGroupConfig(byte[32],uint8,byte[64],uint64,uint64)void"
+==
+bnz main_l26
+txna ApplicationArgs 0
+pushbytes 0x3b1afe28 // "setStoremanGroupStatus(byte[32],uint8)void"
+==
+bnz main_l25
+err
+main_l25:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub setStoremanGroupStatuscaster_58
+intc_1 // 1
+return
+main_l26:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub setStoremanGroupConfigcaster_57
+intc_1 // 1
+return
+main_l27:
+txn OnCompletion
+pushint 5 // DeleteApplication
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub deletecaster_56
+intc_1 // 1
+return
+main_l28:
+txn OnCompletion
+pushint 4 // UpdateApplication
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub updatecaster_55
+intc_1 // 1
+return
+main_l29:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub initializecaster_54
+intc_1 // 1
+return
+main_l30:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub updateTokenPaircaster_53
+intc_1 // 1
+return
+main_l31:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub removeTokenPaircaster_52
+intc_1 // 1
+return
+main_l32:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub addTokenPaircaster_51
+intc_1 // 1
+return
+main_l33:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub optintokenidcaster_50
+intc_1 // 1
+return
+main_l34:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub smgReleasecaster_49
+intc_1 // 1
+return
+main_l35:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub acquireReadySmgInfocaster_48
+intc_1 // 1
+return
+main_l36:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub setSmgFeeProxycaster_47
+intc_1 // 1
+return
+main_l37:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub userLockcaster_46
+intc_1 // 1
+return
+main_l38:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub setFeescaster_45
+intc_1 // 1
+return
+main_l39:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub setFeecaster_44
+intc_1 // 1
+return
+main_l40:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub setTokenPairFeescaster_43
+intc_1 // 1
+return
+main_l41:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub setTokenPairFeecaster_42
+intc_1 // 1
+return
+main_l42:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub setHaltcaster_41
+intc_1 // 1
+return
+main_l43:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub transferOracleAdmincaster_40
+intc_1 // 1
+return
+main_l44:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub transferUpdateOwnercaster_39
+intc_1 // 1
+return
+main_l45:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub transferOwnercaster_38
+intc_1 // 1
+return
+main_l46:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub removeAdmincaster_37
+intc_1 // 1
+return
+main_l47:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub addAdmincaster_36
+intc_1 // 1
+return
+main_l48:
+txn OnCompletion
+intc_0 // NoOp
+==
+bnz main_l50
+err
+main_l50:
+txn ApplicationID
+intc_0 // 0
+==
+assert
+intc_1 // 1
+return
+
+// convertToEthAddr
+convertToEthAddr_0:
+proto 2 1
+frame_dig -2
+frame_dig -1
+concat
+keccak256
+pop
+frame_dig -2
+frame_dig -1
+concat
+keccak256
+extract 12 20
+retsub
+
+// check_ecSchnorr_sig
+checkecSchnorrsig_1:
+proto 6 1
+pushint 13000 // 13000
+pushint 10 // 10
++
+store 30
+checkecSchnorrsig_1_l1:
+load 30
+global OpcodeBudget
+>
+bnz checkecSchnorrsig_1_l8
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+pop
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+pop
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+pushbytes 0x0000000000000000000000000000000000000000000000000000000000000000 // 0x0000000000000000000000000000000000000000000000000000000000000000
+b!=
+assert
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+pop
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+pushbytes 0x7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a0 // 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0
+b>
+bnz checkecSchnorrsig_1_l7
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+pop
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+pop
+checkecSchnorrsig_1_l4:
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+frame_dig -5
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+ecdsa_pk_recover Secp256k1
+store 32
+store 31
+load 31
+load 32
+callsub convertToEthAddr_0
+pop
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+frame_dig -5
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+ecdsa_pk_recover Secp256k1
+store 32
+store 31
+load 31
+load 32
+callsub convertToEthAddr_0
+pushbytes 0x0000000000000000000000000000000000000000 // 0x0000000000000000000000000000000000000000
+b!=
+assert
+frame_dig -2
+extract 31 1
+pop
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+frame_dig -5
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+ecdsa_pk_recover Secp256k1
+store 32
+store 31
+load 31
+load 32
+callsub convertToEthAddr_0
+frame_dig -2
+extract 31 1
+concat
+frame_dig -5
+concat
+frame_dig -1
+concat
+keccak256
+pop
+frame_dig -3
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+frame_dig -5
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+ecdsa_pk_recover Secp256k1
+store 32
+store 31
+load 31
+load 32
+callsub convertToEthAddr_0
+frame_dig -2
+extract 31 1
+concat
+frame_dig -5
+concat
+frame_dig -1
+concat
+keccak256
+b==
+assert
+frame_dig -3
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+frame_dig -5
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+ecdsa_pk_recover Secp256k1
+store 32
+store 31
+load 31
+load 32
+callsub convertToEthAddr_0
+frame_dig -2
+extract 31 1
+concat
+frame_dig -5
+concat
+frame_dig -1
+concat
+keccak256
+b==
+bnz checkecSchnorrsig_1_l6
+intc_0 // 0
+b checkecSchnorrsig_1_l9
+checkecSchnorrsig_1_l6:
+intc_1 // 1
+b checkecSchnorrsig_1_l9
+checkecSchnorrsig_1_l7:
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+intc_1 // 1
++
+intc_2 // 2
+%
+pop
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+b-
+pop
+b checkecSchnorrsig_1_l4
+checkecSchnorrsig_1_l8:
+itxn_begin
+pushint 6 // appl
+itxn_field TypeEnum
+intc_0 // 0
+itxn_field Fee
+pushint 5 // DeleteApplication
+itxn_field OnCompletion
+bytec 8 // 0x068101
+itxn_field ApprovalProgram
+bytec 8 // 0x068101
+itxn_field ClearStateProgram
+itxn_submit
+b checkecSchnorrsig_1_l1
+checkecSchnorrsig_1_l9:
+retsub
+
+// getFromToChainID
+getFromToChainID_2:
+proto 2 1
+intc_0 // 0
+frame_dig -2
+pushint 4294967296 // 4294967296
+*
+frame_dig -1
++
+frame_bury 0
+retsub
+
+// getTokenPairFeeKey
+getTokenPairFeeKey_3:
+proto 1 1
+bytec_0 // ""
+pushbytes 0x6d6170546f6b656e50616972436f6e7472616374466565 // "mapTokenPairContractFee"
+frame_dig -1
+itob
+concat
+frame_bury 0
+frame_dig 0
+len
+itob
+extract 6 0
+frame_dig 0
+concat
+frame_bury 0
+retsub
+
+// getTokenPairInfoKey
+getTokenPairInfoKey_4:
+proto 1 1
+bytec_0 // ""
+pushbytes 0x6d6170546f6b656e50616972496e666f // "mapTokenPairInfo"
+frame_dig -1
+itob
+concat
+frame_bury 0
+frame_dig 0
+len
+itob
+extract 6 0
+frame_dig 0
+concat
+frame_bury 0
+retsub
+
+// getAdminKey
+getAdminKey_5:
+proto 1 1
+bytec_0 // ""
+pushbytes 0x6d617041646d696e // "mapAdmin"
+frame_dig -1
+concat
+frame_bury 0
+frame_dig 0
+len
+itob
+extract 6 0
+frame_dig 0
+concat
+frame_bury 0
+retsub
+
+// getContractFeeKey
+getContractFeeKey_6:
+proto 2 1
+bytec_0 // ""
+intc_0 // 0
+frame_dig -2
+frame_dig -1
+callsub getFromToChainID_2
+frame_bury 1
+pushbytes 0x6d6170436f6e7472616374466565 // "mapContractFee"
+frame_dig 1
+itob
+concat
+frame_bury 0
+frame_dig 0
+len
+itob
+extract 6 0
+frame_dig 0
+concat
+frame_bury 0
+retsub
+
+// getAgentFeeKey
+getAgentFeeKey_7:
+proto 2 1
+bytec_0 // ""
+intc_0 // 0
+frame_dig -2
+frame_dig -1
+callsub getFromToChainID_2
+frame_bury 1
+pushbytes 0x6d61704167656e74466565 // "mapAgentFee"
+frame_dig 1
+itob
+concat
+frame_bury 0
+frame_dig 0
+len
+itob
+extract 6 0
+frame_dig 0
+concat
+frame_bury 0
+retsub
+
+// do_axfer
+doaxfer_8:
+proto 3 0
+itxn_begin
+pushint 4 // axfer
+itxn_field TypeEnum
+frame_dig -2
+itxn_field XferAsset
+frame_dig -1
+itxn_field AssetAmount
+frame_dig -3
+itxn_field AssetReceiver
+pushint 1000 // 1000
+itxn_field Fee
+itxn_submit
+retsub
+
+// do_opt_in
+dooptin_9:
+proto 1 0
+global CurrentApplicationAddress
+frame_dig -1
+intc_0 // 0
+callsub doaxfer_8
+retsub
+
+// addAdmin
+addAdmin_10:
+proto 1 0
+bytec_0 // ""
+intc_0 // 0
+txn Sender
+bytec_2 // "owner"
+app_global_get
+==
+// unauthorized
+assert
+frame_dig -1
+callsub getAdminKey_5
+frame_bury 0
+intc_1 // 1
+frame_bury 1
+frame_dig 0
+box_del
+pop
+frame_dig 0
+frame_dig 1
+itob
+box_put
+retsub
+
+// removeAdmin
+removeAdmin_11:
+proto 1 0
+bytec_0 // ""
+txn Sender
+bytec_2 // "owner"
+app_global_get
+==
+// unauthorized
+assert
+frame_dig -1
+callsub getAdminKey_5
+frame_bury 0
+frame_dig 0
+box_del
+pop
+retsub
+
+// onlyAdmin
+onlyAdmin_12:
+proto 1 1
+bytec_0 // ""
+dup
+frame_dig -1
+frame_bury 1
+frame_dig 1
+len
+pushint 32 // 32
+==
+assert
+frame_dig 1
+callsub getAdminKey_5
+frame_bury 0
+frame_dig 0
+box_len
+store 1
+store 0
+load 1
+bnz onlyAdmin_12_l2
+intc_0 // 0
+b onlyAdmin_12_l3
+onlyAdmin_12_l2:
+intc_1 // 1
+onlyAdmin_12_l3:
+frame_bury 0
+retsub
+
+// transferOwner
+transferOwner_13:
+proto 1 0
+txn Sender
+bytec_2 // "owner"
+app_global_get
+==
+// unauthorized
+assert
+bytec_2 // "owner"
+frame_dig -1
+app_global_put
+retsub
+
+// transferUpdateOwner
+transferUpdateOwner_14:
+proto 1 0
+txn Sender
+bytec_2 // "owner"
+app_global_get
+==
+// unauthorized
+assert
+bytec 5 // "updateOwner"
+frame_dig -1
+app_global_put
+retsub
+
+// transferOracleAdmin
+transferOracleAdmin_15:
+proto 1 0
+txn Sender
+bytec_2 // "owner"
+app_global_get
+==
+// unauthorized
+assert
+bytec 4 // "oracleAdmin"
+frame_dig -1
+app_global_put
+retsub
+
+// setHalt
+setHalt_16:
+proto 1 0
+txn Sender
+bytec_2 // "owner"
+app_global_get
+==
+// unauthorized
+assert
+bytec 6 // "halted"
+frame_dig -1
+app_global_put
+retsub
+
+// setTokenPairFee
+setTokenPairFee_17:
+proto 2 0
+bytec_0 // ""
+txn Sender
+callsub onlyAdmin_12
+// unauthorized
+assert
+frame_dig -2
+callsub getTokenPairFeeKey_3
+frame_bury 0
+frame_dig 0
+box_del
+pop
+frame_dig 0
+frame_dig -1
+itob
+box_put
+retsub
+
+// setTokenPairFees
+setTokenPairFees_18:
+proto 2 0
+bytec_0 // ""
+intc_0 // 0
+dupn 4
+txn Sender
+callsub onlyAdmin_12
+// unauthorized
+assert
+intc_0 // 0
+store 2
+setTokenPairFees_18_l1:
+load 2
+frame_dig -2
+intc_0 // 0
+extract_uint16
+frame_bury 3
+frame_dig 3
+<
+bz setTokenPairFees_18_l3
+frame_dig -2
+pushint 8 // 8
+load 2
+*
+intc_2 // 2
++
+extract_uint64
+frame_bury 1
+frame_dig 1
+callsub getTokenPairFeeKey_3
+frame_bury 0
+frame_dig -1
+pushint 8 // 8
+load 2
+*
+intc_2 // 2
++
+extract_uint64
+frame_bury 2
+frame_dig 0
+box_del
+pop
+frame_dig 0
+frame_dig 2
+itob
+box_put
+load 2
+intc_1 // 1
++
+store 2
+b setTokenPairFees_18_l1
+setTokenPairFees_18_l3:
+retsub
+
+// setFee
+setFee_19:
+proto 4 0
+bytec_0 // ""
+dup
+txn Sender
+callsub onlyAdmin_12
+// unauthorized
+assert
+frame_dig -4
+frame_dig -3
+callsub getContractFeeKey_6
+frame_bury 0
+frame_dig -4
+frame_dig -3
+callsub getAgentFeeKey_7
+frame_bury 1
+frame_dig 0
+box_del
+pop
+frame_dig 0
+frame_dig -2
+itob
+box_put
+frame_dig 1
+box_del
+pop
+frame_dig 1
+frame_dig -1
+itob
+box_put
+retsub
+
+// setFees
+setFees_20:
+proto 4 0
+bytec_0 // ""
+dup
+intc_0 // 0
+dupn 8
+txn Sender
+callsub onlyAdmin_12
+// unauthorized
+assert
+intc_0 // 0
+store 3
+setFees_20_l1:
+load 3
+frame_dig -2
+intc_0 // 0
+extract_uint16
+frame_bury 6
+frame_dig 6
+<
+bz setFees_20_l3
+frame_dig -4
+pushint 8 // 8
+load 3
+*
+intc_2 // 2
++
+extract_uint64
+frame_bury 2
+frame_dig -3
+pushint 8 // 8
+load 3
+*
+intc_2 // 2
++
+extract_uint64
+frame_bury 3
+frame_dig -2
+pushint 8 // 8
+load 3
+*
+intc_2 // 2
++
+extract_uint64
+frame_bury 4
+frame_dig -1
+pushint 8 // 8
+load 3
+*
+intc_2 // 2
++
+extract_uint64
+frame_bury 5
+frame_dig 2
+frame_dig 3
+callsub getContractFeeKey_6
+frame_bury 0
+frame_dig 0
+box_del
+pop
+frame_dig 0
+frame_dig 4
+itob
+box_put
+frame_dig 2
+frame_dig 3
+callsub getAgentFeeKey_7
+frame_bury 1
+frame_dig 1
+box_del
+pop
+frame_dig 1
+frame_dig 5
+itob
+box_put
+load 3
+intc_1 // 1
++
+store 3
+b setFees_20_l1
+setFees_20_l3:
+retsub
+
+// getCrossTokenInfo
+getCrossTokenInfo_21:
+proto 1 1
+bytec_0 // ""
+intc_0 // 0
+bytec_0 // ""
+intc_0 // 0
+bytec_0 // ""
+intc_0 // 0
+dup
+bytec_0 // ""
+dup
+intc_0 // 0
+dup
+bytec_0 // ""
+dup
+intc_0 // 0
+frame_bury 3
+frame_dig -1
+callsub getTokenPairFeeKey_3
+frame_bury 2
+frame_dig 2
+box_len
+store 5
+store 4
+load 5
+bnz getCrossTokenInfo_21_l23
+intc_0 // 0
+frame_bury 1
+getCrossTokenInfo_21_l2:
+frame_dig -1
+callsub getTokenPairInfoKey_4
+frame_bury 2
+frame_dig 2
+box_get
+store 9
+store 8
+load 9
+assert
+load 8
+frame_bury 4
+frame_dig 4
+pushint 18 // 18
+extract_uint64
+frame_bury 5
+frame_dig 4
+pushint 8 // 8
+extract_uint64
+frame_bury 6
+frame_dig 6
+intc_0 // 0
+==
+bnz getCrossTokenInfo_21_l22
+frame_dig 5
+intc_0 // 0
+==
+bnz getCrossTokenInfo_21_l21
+frame_dig 5
+intc 5 // 2147483931
+==
+bnz getCrossTokenInfo_21_l14
+frame_dig 6
+intc 5 // 2147483931
+==
+bnz getCrossTokenInfo_21_l7
+intc_0 // 0
+return
+getCrossTokenInfo_21_l7:
+frame_dig 1
+intc_0 // 0
+==
+bnz getCrossTokenInfo_21_l12
+getCrossTokenInfo_21_l8:
+frame_dig 1
+intc_0 // 0
+==
+bnz getCrossTokenInfo_21_l10
+getCrossTokenInfo_21_l9:
+frame_dig 4
+frame_dig 4
+pushint 26 // 26
+extract_uint16
+dig 1
+len
+substring3
+frame_bury 7
+frame_dig 4
+frame_dig 4
+pushint 16 // 16
+extract_uint16
+frame_dig 4
+pushint 26 // 26
+extract_uint16
+substring3
+frame_bury 8
+b getCrossTokenInfo_21_l24
+getCrossTokenInfo_21_l10:
+frame_dig 6
+frame_dig 3
+callsub getContractFeeKey_6
+frame_bury 2
+frame_dig 2
+box_len
+store 23
+store 22
+load 23
+bz getCrossTokenInfo_21_l9
+frame_dig 2
+box_get
+store 25
+store 24
+load 25
+assert
+load 24
+btoi
+frame_bury 1
+b getCrossTokenInfo_21_l9
+getCrossTokenInfo_21_l12:
+frame_dig 6
+frame_dig 5
+callsub getContractFeeKey_6
+frame_bury 2
+frame_dig 2
+box_len
+store 19
+store 18
+load 19
+bz getCrossTokenInfo_21_l8
+frame_dig 2
+box_get
+store 21
+store 20
+load 21
+assert
+load 20
+btoi
+frame_bury 1
+b getCrossTokenInfo_21_l8
+getCrossTokenInfo_21_l14:
+frame_dig 1
+intc_0 // 0
+==
+bnz getCrossTokenInfo_21_l19
+getCrossTokenInfo_21_l15:
+frame_dig 1
+intc_0 // 0
+==
+bnz getCrossTokenInfo_21_l17
+getCrossTokenInfo_21_l16:
+frame_dig 4
+frame_dig 4
+pushint 26 // 26
+extract_uint16
+dig 1
+len
+substring3
+frame_bury 8
+frame_dig 4
+frame_dig 4
+pushint 16 // 16
+extract_uint16
+frame_dig 4
+pushint 26 // 26
+extract_uint16
+substring3
+frame_bury 7
+b getCrossTokenInfo_21_l24
+getCrossTokenInfo_21_l17:
+frame_dig 5
+frame_dig 3
+callsub getContractFeeKey_6
+frame_bury 2
+frame_dig 2
+box_len
+store 15
+store 14
+load 15
+bz getCrossTokenInfo_21_l16
+frame_dig 2
+box_get
+store 17
+store 16
+load 17
+assert
+load 16
+btoi
+frame_bury 1
+b getCrossTokenInfo_21_l16
+getCrossTokenInfo_21_l19:
+frame_dig 5
+frame_dig 6
+callsub getContractFeeKey_6
+frame_bury 2
+frame_dig 2
+box_len
+store 11
+store 10
+load 11
+bz getCrossTokenInfo_21_l15
+frame_dig 2
+box_get
+store 13
+store 12
+load 13
+assert
+load 12
+btoi
+frame_bury 1
+b getCrossTokenInfo_21_l15
+getCrossTokenInfo_21_l21:
+intc_0 // 0
+return
+getCrossTokenInfo_21_l22:
+intc_0 // 0
+return
+getCrossTokenInfo_21_l23:
+frame_dig 2
+box_get
+store 7
+store 6
+load 7
+assert
+load 6
+btoi
+frame_bury 1
+b getCrossTokenInfo_21_l2
+getCrossTokenInfo_21_l24:
+frame_dig 1
+itob
+frame_dig 8
+frame_bury 12
+frame_dig 12
+frame_bury 11
+pushint 12 // 12
+frame_bury 9
+frame_dig 9
+frame_dig 12
+len
++
+frame_bury 10
+frame_dig 10
+intc 4 // 65536
+<
+assert
+frame_dig 9
+itob
+extract 6 0
+concat
+frame_dig 7
+frame_bury 12
+frame_dig 11
+frame_dig 12
+concat
+frame_bury 11
+frame_dig 10
+frame_bury 9
+frame_dig 9
+itob
+extract 6 0
+concat
+frame_dig 11
+concat
+frame_bury 0
+retsub
+
+// userLock
+userLock_22:
+proto 4 0
+intc_0 // 0
+bytec_0 // ""
+dup
+intc_0 // 0
+bytec_0 // ""
+intc_0 // 0
+bytec_0 // ""
+dupn 2
+intc_0 // 0
+dup
+bytec_0 // ""
+dup
+bytec 6 // "halted"
+app_global_get
+intc_0 // 0
+==
+assert
+frame_dig -3
+callsub getCrossTokenInfo_21
+frame_bury 4
+frame_dig 4
+intc_0 // 0
+extract_uint64
+frame_bury 0
+frame_dig 4
+frame_dig 4
+pushint 10 // 10
+extract_uint16
+dig 1
+len
+substring3
+frame_bury 1
+frame_dig 4
+frame_dig 4
+pushint 8 // 8
+extract_uint16
+frame_dig 4
+pushint 10 // 10
+extract_uint16
+substring3
+frame_bury 2
+frame_dig 0
+intc_0 // 0
+>
+bnz userLock_22_l4
+userLock_22_l1:
+frame_dig 2
+extract 2 0
+intc_0 // 0
+itob
+==
+bnz userLock_22_l3
+global GroupSize
+pushint 3 // 3
+==
+assert
+txn GroupIndex
+intc_2 // 2
+==
+assert
+gtxn 0 TypeEnum
+intc_1 // pay
+==
+assert
+gtxn 0 Receiver
+global CurrentApplicationAddress
+==
+assert
+gtxn 0 Amount
+frame_dig 0
+==
+assert
+gtxn 1 TypeEnum
+pushint 4 // axfer
+==
+assert
+gtxn 1 AssetReceiver
+global CurrentApplicationAddress
+==
+assert
+gtxn 1 XferAsset
+frame_dig 2
+extract 2 0
+btoi
+==
+assert
+gtxn 1 AssetAmount
+frame_dig -1
+==
+assert
+gtxn 1 TxID
+frame_bury 6
+pushint 32 // 32
+frame_dig 6
+len
+==
+assert
+b userLock_22_l5
+userLock_22_l3:
+global GroupSize
+intc_2 // 2
+==
+assert
+txn GroupIndex
+intc_1 // 1
+==
+assert
+gtxn 0 TypeEnum
+intc_1 // pay
+==
+assert
+gtxn 0 Receiver
+global CurrentApplicationAddress
+==
+assert
+gtxn 0 Amount
+frame_dig 0
+frame_dig -1
++
+==
+assert
+gtxn 0 TxID
+frame_bury 6
+pushint 32 // 32
+frame_dig 6
+len
+==
+assert
+b userLock_22_l5
+userLock_22_l4:
+itxn_begin
+intc_1 // pay
+itxn_field TypeEnum
+bytec_3 // "feeProxy"
+app_global_get
+itxn_field Receiver
+frame_dig 0
+itxn_field Amount
+itxn_submit
+b userLock_22_l1
+userLock_22_l5:
+pushbytes 0x000e557365724c6f636b4c6f67676572 // 0x000e557365724c6f636b4c6f67676572
+frame_bury 7
+frame_dig 2
+extract 2 0
+btoi
+frame_bury 3
+frame_dig 7
+frame_bury 12
+frame_dig 12
+frame_bury 11
+pushint 100 // 100
+frame_bury 9
+frame_dig 9
+frame_dig 12
+len
++
+frame_bury 10
+frame_dig 10
+intc 4 // 65536
+<
+assert
+frame_dig 9
+itob
+extract 6 0
+frame_dig -4
+concat
+frame_dig -3
+itob
+concat
+frame_dig 3
+itob
+concat
+frame_dig -1
+itob
+concat
+frame_dig 0
+itob
+concat
+frame_dig -2
+frame_bury 12
+frame_dig 11
+frame_dig 12
+concat
+frame_bury 11
+frame_dig 10
+frame_bury 9
+frame_dig 9
+itob
+extract 6 0
+concat
+frame_dig 6
+concat
+frame_dig 11
+concat
+frame_bury 8
+frame_dig 8
+log
+retsub
+
+// setSmgFeeProxy
+setSmgFeeProxy_23:
+proto 1 0
+txn Sender
+bytec_2 // "owner"
+app_global_get
+==
+// unauthorized
+assert
+bytec_3 // "feeProxy"
+frame_dig -1
+app_global_put
+retsub
+
+// verifySignature
+verifySignature_24:
+proto 4 1
+frame_dig -2
+extract 0 32
+pop
+frame_dig -2
+extract 32 32
+pop
+frame_dig -3
+extract 0 32
+pop
+frame_dig -3
+extract 32 32
+pop
+frame_dig -1
+frame_dig -3
+extract 0 32
+frame_dig -3
+extract 32 32
+frame_dig -2
+extract 0 32
+frame_dig -2
+extract 32 32
+frame_dig -4
+callsub checkecSchnorrsig_1
+intc_1 // 1
+==
+bnz verifySignature_24_l2
+intc_0 // 0
+b verifySignature_24_l3
+verifySignature_24_l2:
+intc_1 // 1
+verifySignature_24_l3:
+retsub
+
+// acquireReadySmgInfo
+acquireReadySmgInfo_25:
+proto 1 1
+bytec_0 // ""
+dup
+intc_0 // 0
+dupn 2
+frame_dig -1
+box_get
+store 27
+store 26
+load 27
+assert
+load 26
+frame_bury 1
+frame_dig 1
+pushint 64 // 64
+extract_uint64
+frame_bury 2
+frame_dig 1
+pushint 72 // 72
+extract_uint64
+frame_bury 3
+frame_dig 1
+pushint 80 // 80
+getbyte
+frame_bury 4
+global LatestTimestamp
+frame_dig 2
+>=
+assert
+global LatestTimestamp
+frame_dig 3
+<
+assert
+frame_dig 4
+pushint 5 // 5
+==
+assert
+frame_dig 1
+extract 0 64
+frame_bury 0
+retsub
+
+// smgRelease
+smgRelease_26:
+proto 9 0
+bytec_0 // ""
+intc_0 // 0
+bytec_0 // ""
+dupn 2
+intc_0 // 0
+dup
+bytec_0 // ""
+dup
+intc 5 // 2147483931
+itob
+frame_dig -9
+concat
+frame_dig -7
+itob
+concat
+frame_dig -6
+itob
+concat
+frame_dig -5
+itob
+concat
+frame_dig -4
+itob
+concat
+frame_dig -3
+concat
+pop
+intc 5 // 2147483931
+itob
+frame_dig -9
+concat
+frame_dig -7
+itob
+concat
+frame_dig -6
+itob
+concat
+frame_dig -5
+itob
+concat
+frame_dig -4
+itob
+concat
+frame_dig -3
+concat
+keccak256
+pop
+bytec 6 // "halted"
+app_global_get
+intc_0 // 0
+==
+assert
+pushbytes 0x0010536d6752656c656173654c6f67676572 // 0x0010536d6752656c656173654c6f67676572
+frame_bury 2
+frame_dig 2
+frame_bury 8
+frame_dig 8
+frame_bury 7
+pushint 122 // 122
+frame_bury 5
+frame_dig 5
+itob
+extract 6 0
+frame_dig -9
+concat
+frame_dig -8
+concat
+frame_dig -7
+itob
+concat
+frame_dig -6
+itob
+concat
+frame_dig -4
+itob
+concat
+frame_dig -3
+concat
+frame_dig 7
+concat
+frame_bury 4
+frame_dig 4
+log
+frame_dig -9
+box_len
+store 29
+store 28
+load 29
+bnz smgRelease_26_l6
+intc_1 // 1
+frame_bury 1
+frame_dig -9
+box_del
+pop
+frame_dig -9
+bytec 7 // 0x00
+intc_0 // 0
+frame_dig 1
+setbyte
+box_put
+frame_dig -8
+callsub acquireReadySmgInfo_25
+frame_bury 0
+intc 5 // 2147483931
+itob
+frame_dig -9
+concat
+frame_dig -7
+itob
+concat
+frame_dig -6
+itob
+concat
+frame_dig -5
+itob
+concat
+frame_dig -4
+itob
+concat
+frame_dig -3
+concat
+keccak256
+frame_dig 0
+frame_dig -2
+frame_dig -1
+callsub verifySignature_24
+intc_1 // 1
+==
+assert
+frame_dig -4
+intc_0 // 0
+==
+bnz smgRelease_26_l4
+frame_dig -3
+frame_dig -4
+frame_dig -6
+callsub doaxfer_8
+frame_dig -5
+intc_0 // 0
+>
+bz smgRelease_26_l7
+bytec_3 // "feeProxy"
+app_global_get
+frame_bury 3
+frame_dig 3
+len
+pushint 32 // 32
+==
+assert
+frame_dig 3
+frame_dig -4
+frame_dig -5
+callsub doaxfer_8
+b smgRelease_26_l7
+smgRelease_26_l4:
+itxn_begin
+intc_1 // pay
+itxn_field TypeEnum
+txn Sender
+itxn_field Receiver
+frame_dig -6
+itxn_field Amount
+itxn_submit
+frame_dig -5
+intc_0 // 0
+>
+bz smgRelease_26_l7
+bytec_3 // "feeProxy"
+app_global_get
+frame_bury 3
+frame_dig 3
+len
+pushint 32 // 32
+==
+assert
+itxn_begin
+intc_1 // pay
+itxn_field TypeEnum
+frame_dig 3
+itxn_field Receiver
+frame_dig -5
+itxn_field Amount
+itxn_submit
+b smgRelease_26_l7
+smgRelease_26_l6:
+intc_0 // 0
+return
+smgRelease_26_l7:
+retsub
+
+// opt_in_token_id
+optintokenid_27:
+proto 1 0
+txn Sender
+callsub onlyAdmin_12
+// unauthorized
+assert
+frame_dig -1
+callsub dooptin_9
+retsub
+
+// addTokenPair
+addTokenPair_28:
+proto 5 0
+bytec_0 // ""
+dupn 2
+intc_0 // 0
+dup
+bytec_0 // ""
+dupn 2
+intc_0 // 0
+dup
+bytec_0 // ""
+dup
+txn Sender
+bytec_2 // "owner"
+app_global_get
+==
+// unauthorized
+assert
+frame_dig -5
+callsub getTokenPairInfoKey_4
+frame_bury 0
+frame_dig 0
+box_len
+store 34
+store 33
+load 34
+intc_0 // 0
+==
+assert
+frame_dig -5
+itob
+frame_dig -4
+itob
+concat
+frame_dig -3
+frame_bury 6
+frame_dig 6
+frame_bury 5
+pushint 28 // 28
+frame_bury 3
+frame_dig 3
+frame_dig 6
+len
++
+frame_bury 4
+frame_dig 4
+intc 4 // 65536
+<
+assert
+frame_dig 3
+itob
+extract 6 0
+concat
+frame_dig -2
+itob
+concat
+frame_dig -1
+frame_bury 6
+frame_dig 5
+frame_dig 6
+concat
+frame_bury 5
+frame_dig 4
+frame_bury 3
+frame_dig 3
+itob
+extract 6 0
+concat
+frame_dig 5
+concat
+frame_bury 2
+frame_dig 0
+box_del
+pop
+frame_dig 0
+frame_dig 2
+box_put
+pushbytes 0x000c616464546f6b656e50616972 // 0x000c616464546f6b656e50616972
+frame_bury 1
+frame_dig 1
+frame_bury 11
+frame_dig 11
+frame_bury 10
+pushint 30 // 30
+frame_bury 8
+frame_dig 8
+frame_dig 11
+len
++
+frame_bury 9
+frame_dig 9
+intc 4 // 65536
+<
+assert
+frame_dig 8
+itob
+extract 6 0
+frame_dig -5
+itob
+concat
+frame_dig -4
+itob
+concat
+frame_dig -3
+frame_bury 11
+frame_dig 10
+frame_dig 11
+concat
+frame_bury 10
+frame_dig 9
+frame_bury 8
+frame_dig 8
+frame_dig 11
+len
++
+frame_bury 9
+frame_dig 9
+intc 4 // 65536
+<
+assert
+frame_dig 8
+itob
+extract 6 0
+concat
+frame_dig -2
+itob
+concat
+frame_dig -1
+frame_bury 11
+frame_dig 10
+frame_dig 11
+concat
+frame_bury 10
+frame_dig 9
+frame_bury 8
+frame_dig 8
+itob
+extract 6 0
+concat
+frame_dig 10
+concat
+frame_bury 7
+frame_dig 7
+log
+retsub
+
+// removeTokenPair
+removeTokenPair_29:
+proto 1 0
+bytec_0 // ""
+txn Sender
+bytec_2 // "owner"
+app_global_get
+==
+// unauthorized
+assert
+frame_dig -1
+callsub getTokenPairInfoKey_4
+frame_bury 0
+frame_dig 0
+box_del
+pop
+retsub
+
+// updateTokenPair
+updateTokenPair_30:
+proto 5 0
+bytec_0 // ""
+dupn 2
+intc_0 // 0
+dup
+bytec_0 // ""
+dupn 2
+intc_0 // 0
+dup
+bytec_0 // ""
+dup
+txn Sender
+bytec_2 // "owner"
+app_global_get
+==
+// unauthorized
+assert
+frame_dig -5
+callsub getTokenPairInfoKey_4
+frame_bury 0
+frame_dig 0
+box_len
+store 36
+store 35
+load 36
+intc_1 // 1
+==
+assert
+frame_dig -5
+itob
+frame_dig -4
+itob
+concat
+frame_dig -3
+frame_bury 6
+frame_dig 6
+frame_bury 5
+pushint 28 // 28
+frame_bury 3
+frame_dig 3
+frame_dig 6
+len
++
+frame_bury 4
+frame_dig 4
+intc 4 // 65536
+<
+assert
+frame_dig 3
+itob
+extract 6 0
+concat
+frame_dig -2
+itob
+concat
+frame_dig -1
+frame_bury 6
+frame_dig 5
+frame_dig 6
+concat
+frame_bury 5
+frame_dig 4
+frame_bury 3
+frame_dig 3
+itob
+extract 6 0
+concat
+frame_dig 5
+concat
+frame_bury 2
+frame_dig 0
+box_del
+pop
+frame_dig 0
+frame_dig 2
+box_put
+pushbytes 0x000f757064617465546f6b656e50616972 // 0x000f757064617465546f6b656e50616972
+frame_bury 1
+frame_dig 1
+frame_bury 11
+frame_dig 11
+frame_bury 10
+pushint 30 // 30
+frame_bury 8
+frame_dig 8
+frame_dig 11
+len
++
+frame_bury 9
+frame_dig 9
+intc 4 // 65536
+<
+assert
+frame_dig 8
+itob
+extract 6 0
+frame_dig -5
+itob
+concat
+frame_dig -4
+itob
+concat
+frame_dig -3
+frame_bury 11
+frame_dig 10
+frame_dig 11
+concat
+frame_bury 10
+frame_dig 9
+frame_bury 8
+frame_dig 8
+frame_dig 11
+len
++
+frame_bury 9
+frame_dig 9
+intc 4 // 65536
+<
+assert
+frame_dig 8
+itob
+extract 6 0
+concat
+frame_dig -2
+itob
+concat
+frame_dig -1
+frame_bury 11
+frame_dig 10
+frame_dig 11
+concat
+frame_bury 10
+frame_dig 9
+frame_bury 8
+frame_dig 8
+itob
+extract 6 0
+concat
+frame_dig 10
+concat
+frame_bury 7
+frame_dig 7
+log
+retsub
+
+// initialize
+initialize_31:
+proto 5 0
+bytec_0 // ""
+intc_0 // 0
+txn Sender
+global CreatorAddress
+==
+// unauthorized
+assert
+bytec 9 // "initialized"
+app_global_get
+intc_0 // 0
+==
+assert
+bytec_2 // "owner"
+frame_dig -5
+app_global_put
+bytec 5 // "updateOwner"
+frame_dig -4
+app_global_put
+bytec 4 // "oracleAdmin"
+frame_dig -1
+app_global_put
+bytec_3 // "feeProxy"
+frame_dig -2
+app_global_put
+frame_dig -3
+callsub getAdminKey_5
+frame_bury 0
+intc_1 // 1
+frame_bury 1
+frame_dig 0
+box_del
+pop
+frame_dig 0
+frame_dig 1
+itob
+box_put
+bytec 9 // "initialized"
+intc_1 // 1
+app_global_put
+retsub
+
+// update
+update_32:
+proto 0 0
+txn Sender
+bytec 5 // "updateOwner"
+app_global_get
+==
+// unauthorized
+assert
+intc_1 // 1
+return
+
+// delete
+delete_33:
+proto 0 0
+intc_0 // 0
+return
+
+// setStoremanGroupConfig
+setStoremanGroupConfig_34:
+proto 5 0
+bytec_0 // ""
+intc_0 // 0
+dup
+bytec_0 // ""
+dup
+txn Sender
+bytec 4 // "oracleAdmin"
+app_global_get
+==
+// unauthorized
+assert
+frame_dig -3
+frame_dig -2
+itob
+concat
+frame_dig -1
+itob
+concat
+bytec 7 // 0x00
+intc_0 // 0
+frame_dig -4
+setbyte
+concat
+frame_bury 0
+frame_dig -5
+box_del
+pop
+frame_dig -5
+frame_dig 0
+box_put
+retsub
+
+// setStoremanGroupStatus
+setStoremanGroupStatus_35:
+proto 2 0
+bytec_0 // ""
+dup
+intc_0 // 0
+dup
+bytec_0 // ""
+intc_0 // 0
+dup
+bytec_0 // ""
+dup
+txn Sender
+bytec 4 // "oracleAdmin"
+app_global_get
+==
+// unauthorized
+assert
+frame_dig -2
+box_get
+store 38
+store 37
+load 38
+assert
+load 37
+frame_bury 0
+frame_dig 0
+extract 0 64
+frame_bury 1
+frame_dig 0
+pushint 64 // 64
+extract_uint64
+frame_bury 2
+frame_dig 0
+pushint 72 // 72
+extract_uint64
+frame_bury 3
+frame_dig 1
+frame_dig 2
+itob
+concat
+frame_dig 3
+itob
+concat
+bytec 7 // 0x00
+intc_0 // 0
+frame_dig -1
+setbyte
+concat
+frame_bury 4
+frame_dig -2
+box_del
+pop
+frame_dig -2
+frame_dig 4
+box_put
+retsub
+
+// addAdmin_caster
+addAdmincaster_36:
+proto 0 0
+bytec_0 // ""
+txna ApplicationArgs 1
+frame_bury 0
+frame_dig 0
+callsub addAdmin_10
+retsub
+
+// removeAdmin_caster
+removeAdmincaster_37:
+proto 0 0
+bytec_0 // ""
+txna ApplicationArgs 1
+frame_bury 0
+frame_dig 0
+callsub removeAdmin_11
+retsub
+
+// transferOwner_caster
+transferOwnercaster_38:
+proto 0 0
+bytec_0 // ""
+txna ApplicationArgs 1
+frame_bury 0
+frame_dig 0
+callsub transferOwner_13
+retsub
+
+// transferUpdateOwner_caster
+transferUpdateOwnercaster_39:
+proto 0 0
+bytec_0 // ""
+txna ApplicationArgs 1
+frame_bury 0
+frame_dig 0
+callsub transferUpdateOwner_14
+retsub
+
+// transferOracleAdmin_caster
+transferOracleAdmincaster_40:
+proto 0 0
+bytec_0 // ""
+txna ApplicationArgs 1
+frame_bury 0
+frame_dig 0
+callsub transferOracleAdmin_15
+retsub
+
+// setHalt_caster
+setHaltcaster_41:
+proto 0 0
+intc_0 // 0
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+frame_dig 0
+callsub setHalt_16
+retsub
+
+// setTokenPairFee_caster
+setTokenPairFeecaster_42:
+proto 0 0
+intc_0 // 0
+dup
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+txna ApplicationArgs 2
+btoi
+frame_bury 1
+frame_dig 0
+frame_dig 1
+callsub setTokenPairFee_17
+retsub
+
+// setTokenPairFees_caster
+setTokenPairFeescaster_43:
+proto 0 0
+bytec_0 // ""
+dup
+txna ApplicationArgs 1
+frame_bury 0
+txna ApplicationArgs 2
+frame_bury 1
+frame_dig 0
+frame_dig 1
+callsub setTokenPairFees_18
+retsub
+
+// setFee_caster
+setFeecaster_44:
+proto 0 0
+intc_0 // 0
+dupn 3
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+txna ApplicationArgs 2
+btoi
+frame_bury 1
+txna ApplicationArgs 3
+btoi
+frame_bury 2
+txna ApplicationArgs 4
+btoi
+frame_bury 3
+frame_dig 0
+frame_dig 1
+frame_dig 2
+frame_dig 3
+callsub setFee_19
+retsub
+
+// setFees_caster
+setFeescaster_45:
+proto 0 0
+bytec_0 // ""
+dupn 3
+txna ApplicationArgs 1
+frame_bury 0
+txna ApplicationArgs 2
+frame_bury 1
+txna ApplicationArgs 3
+frame_bury 2
+txna ApplicationArgs 4
+frame_bury 3
+frame_dig 0
+frame_dig 1
+frame_dig 2
+frame_dig 3
+callsub setFees_20
+retsub
+
+// userLock_caster
+userLockcaster_46:
+proto 0 0
+bytec_0 // ""
+intc_0 // 0
+bytec_0 // ""
+intc_0 // 0
+txna ApplicationArgs 1
+frame_bury 0
+txna ApplicationArgs 2
+btoi
+frame_bury 1
+txna ApplicationArgs 3
+frame_bury 2
+txna ApplicationArgs 4
+btoi
+frame_bury 3
+frame_dig 0
+frame_dig 1
+frame_dig 2
+frame_dig 3
+callsub userLock_22
+retsub
+
+// setSmgFeeProxy_caster
+setSmgFeeProxycaster_47:
+proto 0 0
+bytec_0 // ""
+txna ApplicationArgs 1
+frame_bury 0
+frame_dig 0
+callsub setSmgFeeProxy_23
+retsub
+
+// acquireReadySmgInfo_caster
+acquireReadySmgInfocaster_48:
+proto 0 0
+bytec_0 // ""
+dup
+txna ApplicationArgs 1
+frame_bury 1
+frame_dig 1
+callsub acquireReadySmgInfo_25
+frame_bury 0
+pushbytes 0x151f7c75 // 0x151f7c75
+frame_dig 0
+concat
+log
+retsub
+
+// smgRelease_caster
+smgReleasecaster_49:
+proto 0 0
+bytec_0 // ""
+dup
+intc_0 // 0
+dupn 3
+bytec_0 // ""
+dupn 2
+txna ApplicationArgs 1
+frame_bury 0
+txna ApplicationArgs 2
+frame_bury 1
+txna ApplicationArgs 3
+btoi
+frame_bury 2
+txna ApplicationArgs 4
+btoi
+frame_bury 3
+txna ApplicationArgs 5
+btoi
+frame_bury 4
+txna ApplicationArgs 6
+btoi
+frame_bury 5
+txna ApplicationArgs 7
+frame_bury 6
+txna ApplicationArgs 8
+frame_bury 7
+txna ApplicationArgs 9
+frame_bury 8
+frame_dig 0
+frame_dig 1
+frame_dig 2
+frame_dig 3
+frame_dig 4
+frame_dig 5
+frame_dig 6
+frame_dig 7
+frame_dig 8
+callsub smgRelease_26
+retsub
+
+// opt_in_token_id_caster
+optintokenidcaster_50:
+proto 0 0
+intc_0 // 0
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+frame_dig 0
+callsub optintokenid_27
+retsub
+
+// addTokenPair_caster
+addTokenPaircaster_51:
+proto 0 0
+intc_0 // 0
+dup
+bytec_0 // ""
+intc_0 // 0
+bytec_0 // ""
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+txna ApplicationArgs 2
+btoi
+frame_bury 1
+txna ApplicationArgs 3
+frame_bury 2
+txna ApplicationArgs 4
+btoi
+frame_bury 3
+txna ApplicationArgs 5
+frame_bury 4
+frame_dig 0
+frame_dig 1
+frame_dig 2
+frame_dig 3
+frame_dig 4
+callsub addTokenPair_28
+retsub
+
+// removeTokenPair_caster
+removeTokenPaircaster_52:
+proto 0 0
+intc_0 // 0
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+frame_dig 0
+callsub removeTokenPair_29
+retsub
+
+// updateTokenPair_caster
+updateTokenPaircaster_53:
+proto 0 0
+intc_0 // 0
+dup
+bytec_0 // ""
+intc_0 // 0
+bytec_0 // ""
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+txna ApplicationArgs 2
+btoi
+frame_bury 1
+txna ApplicationArgs 3
+frame_bury 2
+txna ApplicationArgs 4
+btoi
+frame_bury 3
+txna ApplicationArgs 5
+frame_bury 4
+frame_dig 0
+frame_dig 1
+frame_dig 2
+frame_dig 3
+frame_dig 4
+callsub updateTokenPair_30
+retsub
+
+// initialize_caster
+initializecaster_54:
+proto 0 0
+bytec_0 // ""
+dupn 4
+txna ApplicationArgs 1
+frame_bury 0
+txna ApplicationArgs 2
+frame_bury 1
+txna ApplicationArgs 3
+frame_bury 2
+txna ApplicationArgs 4
+frame_bury 3
+txna ApplicationArgs 5
+frame_bury 4
+frame_dig 0
+frame_dig 1
+frame_dig 2
+frame_dig 3
+frame_dig 4
+callsub initialize_31
+retsub
+
+// update_caster
+updatecaster_55:
+proto 0 0
+callsub update_32
+retsub
+
+// delete_caster
+deletecaster_56:
+proto 0 0
+callsub delete_33
+retsub
+
+// setStoremanGroupConfig_caster
+setStoremanGroupConfigcaster_57:
+proto 0 0
+bytec_0 // ""
+intc_0 // 0
+bytec_0 // ""
+intc_0 // 0
+dup
+txna ApplicationArgs 1
+frame_bury 0
+txna ApplicationArgs 2
+intc_0 // 0
+getbyte
+frame_bury 1
+txna ApplicationArgs 3
+frame_bury 2
+txna ApplicationArgs 4
+btoi
+frame_bury 3
+txna ApplicationArgs 5
+btoi
+frame_bury 4
+frame_dig 0
+frame_dig 1
+frame_dig 2
+frame_dig 3
+frame_dig 4
+callsub setStoremanGroupConfig_34
+retsub
+
+// setStoremanGroupStatus_caster
+setStoremanGroupStatuscaster_58:
+proto 0 0
+bytec_0 // ""
+intc_0 // 0
+txna ApplicationArgs 1
+frame_bury 0
+txna ApplicationArgs 2
+intc_0 // 0
+getbyte
+frame_bury 1
+frame_dig 0
+frame_dig 1
+callsub setStoremanGroupStatus_35
+retsub

@@ -1,0 +1,1157 @@
+#pragma version 8
+intcblock 0 1 6 27 2147483931
+bytecblock 0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141 0x 0x666f756e646174696f6e 0x7461736b436f756e74 0x068101 0x627269646765 0x00 0x696e697469616c697a6564
+txn NumAppArgs
+intc_0 // 0
+==
+bnz main_l14
+txna ApplicationArgs 0
+pushbytes 0x868669b2 // "_acquireReadySmgInfo(byte[32])byte[64]"
+==
+bnz main_l13
+txna ApplicationArgs 0
+pushbytes 0xce83f9bd // "proposal(uint64,uint64,uint64,byte[])void"
+==
+bnz main_l12
+txna ApplicationArgs 0
+pushbytes 0x2790856b // "approveAndExecute(uint64,byte[32],byte[64],byte[32])void"
+==
+bnz main_l11
+txna ApplicationArgs 0
+pushbytes 0x6ddc55bb // "initialize(address,uint64)void"
+==
+bnz main_l10
+txna ApplicationArgs 0
+pushbytes 0xa0e81872 // "update()void"
+==
+bnz main_l9
+txna ApplicationArgs 0
+pushbytes 0x24378d3c // "delete()void"
+==
+bnz main_l8
+err
+main_l8:
+txn OnCompletion
+pushint 5 // DeleteApplication
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub deletecaster_16
+intc_1 // 1
+return
+main_l9:
+txn OnCompletion
+pushint 4 // UpdateApplication
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub updatecaster_15
+intc_1 // 1
+return
+main_l10:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub initializecaster_14
+intc_1 // 1
+return
+main_l11:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub approveAndExecutecaster_13
+intc_1 // 1
+return
+main_l12:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub proposalcaster_12
+intc_1 // 1
+return
+main_l13:
+txn OnCompletion
+intc_0 // NoOp
+==
+txn ApplicationID
+intc_0 // 0
+!=
+&&
+assert
+callsub acquireReadySmgInfocaster_11
+intc_1 // 1
+return
+main_l14:
+txn OnCompletion
+intc_0 // NoOp
+==
+bnz main_l16
+err
+main_l16:
+txn ApplicationID
+intc_0 // 0
+==
+assert
+intc_1 // 1
+return
+
+// convertToEthAddr
+convertToEthAddr_0:
+proto 2 1
+frame_dig -2
+frame_dig -1
+concat
+keccak256
+pop
+frame_dig -2
+frame_dig -1
+concat
+keccak256
+extract 12 20
+retsub
+
+// check_ecSchnorr_sig
+checkecSchnorrsig_1:
+proto 6 1
+pushint 13000 // 13000
+pushint 10 // 10
++
+store 2
+checkecSchnorrsig_1_l1:
+load 2
+global OpcodeBudget
+>
+bnz checkecSchnorrsig_1_l8
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+pop
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+pop
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+pushbytes 0x0000000000000000000000000000000000000000000000000000000000000000 // 0x0000000000000000000000000000000000000000000000000000000000000000
+b!=
+assert
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+pop
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+pushbytes 0x7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a0 // 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0
+b>
+bnz checkecSchnorrsig_1_l7
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+pop
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+pop
+checkecSchnorrsig_1_l4:
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+frame_dig -5
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+ecdsa_pk_recover Secp256k1
+store 4
+store 3
+load 3
+load 4
+callsub convertToEthAddr_0
+pop
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+frame_dig -5
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+ecdsa_pk_recover Secp256k1
+store 4
+store 3
+load 3
+load 4
+callsub convertToEthAddr_0
+pushbytes 0x0000000000000000000000000000000000000000 // 0x0000000000000000000000000000000000000000
+b!=
+assert
+frame_dig -2
+extract 31 1
+pop
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+frame_dig -5
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+ecdsa_pk_recover Secp256k1
+store 4
+store 3
+load 3
+load 4
+callsub convertToEthAddr_0
+frame_dig -2
+extract 31 1
+concat
+frame_dig -5
+concat
+frame_dig -1
+concat
+keccak256
+pop
+frame_dig -3
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+frame_dig -5
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+ecdsa_pk_recover Secp256k1
+store 4
+store 3
+load 3
+load 4
+callsub convertToEthAddr_0
+frame_dig -2
+extract 31 1
+concat
+frame_dig -5
+concat
+frame_dig -1
+concat
+keccak256
+b==
+assert
+frame_dig -3
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -6
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+frame_dig -5
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+ecdsa_pk_recover Secp256k1
+store 4
+store 3
+load 3
+load 4
+callsub convertToEthAddr_0
+frame_dig -2
+extract 31 1
+concat
+frame_dig -5
+concat
+frame_dig -1
+concat
+keccak256
+b==
+bnz checkecSchnorrsig_1_l6
+intc_0 // 0
+b checkecSchnorrsig_1_l9
+checkecSchnorrsig_1_l6:
+intc_1 // 1
+b checkecSchnorrsig_1_l9
+checkecSchnorrsig_1_l7:
+frame_dig -2
+extract 31 1
+btoi
+intc_3 // 27
+-
+intc_1 // 1
++
+pushint 2 // 2
+%
+pop
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+frame_dig -3
+frame_dig -5
+b*
+bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+b%
+b-
+b-
+pop
+b checkecSchnorrsig_1_l4
+checkecSchnorrsig_1_l8:
+itxn_begin
+intc_2 // appl
+itxn_field TypeEnum
+intc_0 // 0
+itxn_field Fee
+pushint 5 // DeleteApplication
+itxn_field OnCompletion
+bytec 4 // 0x068101
+itxn_field ApprovalProgram
+bytec 4 // 0x068101
+itxn_field ClearStateProgram
+itxn_submit
+b checkecSchnorrsig_1_l1
+checkecSchnorrsig_1_l9:
+retsub
+
+// getProposalKey
+getProposalKey_2:
+proto 1 1
+bytec_1 // ""
+pushbytes 0x6d61705461736b // "mapTask"
+frame_dig -1
+itob
+concat
+frame_bury 0
+frame_dig 0
+len
+itob
+extract 6 0
+frame_dig 0
+concat
+frame_bury 0
+retsub
+
+// transferFoundation
+transferFoundation_3:
+proto 1 0
+bytec_2 // "foundation"
+frame_dig -1
+app_global_put
+frame_dig -1
+log
+retsub
+
+// _acquireReadySmgInfo
+acquireReadySmgInfo_4:
+proto 1 1
+bytec_1 // ""
+itxn_begin
+intc_2 // appl
+itxn_field TypeEnum
+bytec 5 // "bridge"
+app_global_get
+itxn_field ApplicationID
+pushbytes 0xd0105ce4 // "acquireReadySmgInfo(byte[32])byte[64]"
+itxn_field ApplicationArgs
+frame_dig -1
+itxn_field ApplicationArgs
+itxn_submit
+itxn LastLog
+extract 4 64
+frame_bury 0
+pushint 64 // 64
+frame_dig 0
+len
+==
+assert
+retsub
+
+// proposal
+proposal_5:
+proto 4 0
+bytec_1 // ""
+intc_0 // 0
+dup
+bytec_1 // ""
+intc_0 // 0
+dup
+bytec_1 // ""
+dup
+txn Sender
+bytec_2 // "foundation"
+app_global_get
+==
+// unauthorized
+assert
+frame_dig -4
+intc 4 // 2147483931
+==
+assert
+frame_dig -2
+intc_0 // 0
+>
+assert
+frame_dig -2
+pushint 12 // 12
+<
+assert
+intc_0 // 0
+frame_bury 1
+bytec_3 // "taskCount"
+app_global_get
+frame_bury 2
+frame_dig 2
+callsub getProposalKey_2
+frame_bury 0
+frame_dig -3
+itob
+frame_dig -2
+itob
+concat
+frame_dig -1
+frame_bury 7
+frame_dig 7
+frame_bury 6
+pushint 19 // 19
+frame_bury 4
+frame_dig 4
+itob
+extract 6 0
+concat
+bytec 6 // 0x00
+intc_0 // 0
+frame_dig 1
+setbit
+concat
+frame_dig 6
+concat
+frame_bury 3
+frame_dig 0
+box_del
+pop
+frame_dig 0
+frame_dig 3
+box_put
+bytec_3 // "taskCount"
+bytec_3 // "taskCount"
+app_global_get
+intc_1 // 1
++
+app_global_put
+retsub
+
+// verifySignature
+verifySignature_6:
+proto 4 1
+frame_dig -2
+extract 0 32
+pop
+frame_dig -2
+extract 32 32
+pop
+frame_dig -3
+extract 0 32
+pop
+frame_dig -3
+extract 32 32
+pop
+frame_dig -1
+frame_dig -3
+extract 0 32
+frame_dig -3
+extract 32 32
+frame_dig -2
+extract 0 32
+frame_dig -2
+extract 32 32
+frame_dig -4
+callsub checkecSchnorrsig_1
+retsub
+
+// approveAndExecute
+approveAndExecute_7:
+proto 4 0
+bytec_1 // ""
+dup
+intc_0 // 0
+bytec_1 // ""
+dup
+intc_0 // 0
+dup
+bytec_1 // ""
+dup
+intc_0 // 0
+bytec_1 // ""
+intc_0 // 0
+dup
+bytec_1 // ""
+dupn 4
+intc_0 // 0
+bytec_1 // ""
+intc_0 // 0
+bytec_1 // ""
+intc_0 // 0
+dup
+bytec_1 // ""
+intc_0 // 0
+bytec_1 // ""
+dup
+intc_0 // 0
+dup
+bytec_1 // ""
+intc_0 // 0
+bytec_1 // ""
+dupn 4
+intc_0 // 0
+dup
+bytec_1 // ""
+dup
+frame_dig -4
+itob
+intc 4 // 2147483931
+itob
+concat
+keccak256
+pop
+frame_dig -3
+callsub acquireReadySmgInfo_4
+frame_bury 0
+frame_dig -4
+itob
+intc 4 // 2147483931
+itob
+concat
+keccak256
+frame_dig 0
+frame_dig -2
+frame_dig -1
+callsub verifySignature_6
+intc_1 // 1
+==
+assert
+frame_dig -4
+callsub getProposalKey_2
+frame_bury 1
+frame_dig 1
+box_get
+store 1
+store 0
+load 1
+assert
+load 0
+frame_bury 8
+frame_dig 8
+pushint 144 // 144
+getbit
+frame_bury 9
+frame_dig 9
+intc_0 // 0
+==
+assert
+frame_dig 8
+pushint 8 // 8
+extract_uint64
+frame_bury 2
+frame_dig 8
+frame_dig 8
+pushint 16 // 16
+extract_uint16
+dig 1
+len
+substring3
+frame_bury 3
+frame_dig 8
+intc_0 // 0
+extract_uint64
+frame_bury 6
+pushbytes 0x0013417070726f766564416e644578656375746564 // 0x0013417070726f766564416e644578656375746564
+frame_bury 7
+frame_dig 7
+frame_bury 14
+frame_dig 14
+frame_bury 13
+pushint 52 // 52
+frame_bury 11
+frame_dig 11
+frame_dig 14
+len
++
+frame_bury 12
+frame_dig 12
+pushint 65536 // 65536
+<
+assert
+frame_dig 11
+itob
+extract 6 0
+frame_dig -3
+concat
+frame_dig 6
+itob
+concat
+frame_dig -4
+itob
+concat
+frame_dig 3
+frame_bury 14
+frame_dig 13
+frame_dig 14
+concat
+frame_bury 13
+frame_dig 12
+frame_bury 11
+frame_dig 11
+itob
+extract 6 0
+concat
+frame_dig 13
+concat
+frame_bury 10
+frame_dig 10
+log
+frame_dig 2
+intc_1 // 1
+==
+bnz approveAndExecute_7_l22
+frame_dig 2
+pushint 2 // 2
+==
+bnz approveAndExecute_7_l21
+frame_dig 2
+pushint 3 // 3
+==
+bnz approveAndExecute_7_l20
+frame_dig 2
+pushint 4 // 4
+==
+bnz approveAndExecute_7_l19
+frame_dig 2
+pushint 5 // 5
+==
+bnz approveAndExecute_7_l18
+frame_dig 2
+pushint 7 // 7
+==
+bnz approveAndExecute_7_l17
+frame_dig 2
+intc_2 // 6
+==
+bnz approveAndExecute_7_l16
+frame_dig 2
+pushint 8 // 8
+==
+bnz approveAndExecute_7_l15
+frame_dig 2
+pushint 9 // 9
+==
+bnz approveAndExecute_7_l14
+frame_dig 2
+pushint 10 // 10
+==
+bnz approveAndExecute_7_l13
+frame_dig 2
+pushint 11 // 11
+==
+bnz approveAndExecute_7_l12
+err
+approveAndExecute_7_l12:
+frame_dig 3
+extract 2 0
+frame_bury 35
+itxn_begin
+intc_2 // appl
+itxn_field TypeEnum
+frame_dig 6
+itxn_field ApplicationID
+pushbytes 0x68d2460f // "transferOracleAdmin(address)void"
+itxn_field ApplicationArgs
+frame_dig 35
+itxn_field ApplicationArgs
+itxn_submit
+b approveAndExecute_7_l23
+approveAndExecute_7_l13:
+frame_dig 3
+extract 2 0
+frame_bury 34
+itxn_begin
+intc_2 // appl
+itxn_field TypeEnum
+frame_dig 6
+itxn_field ApplicationID
+pushbytes 0x176caa1f // "transferUpdateOwner(address)void"
+itxn_field ApplicationArgs
+frame_dig 34
+itxn_field ApplicationArgs
+itxn_submit
+b approveAndExecute_7_l23
+approveAndExecute_7_l14:
+frame_dig 3
+extract 2 0
+frame_bury 33
+frame_dig 6
+txn ApplicationID
+==
+assert
+frame_dig 33
+callsub transferFoundation_3
+b approveAndExecute_7_l23
+approveAndExecute_7_l15:
+frame_dig 3
+extract 2 0
+frame_bury 27
+frame_dig 27
+intc_0 // 0
+extract_uint64
+frame_bury 28
+frame_dig 27
+pushint 8 // 8
+extract_uint64
+frame_bury 29
+frame_dig 27
+frame_dig 27
+pushint 16 // 16
+extract_uint16
+frame_dig 27
+pushint 26 // 26
+extract_uint16
+substring3
+frame_bury 30
+frame_dig 27
+pushint 18 // 18
+extract_uint64
+frame_bury 31
+frame_dig 27
+frame_dig 27
+pushint 26 // 26
+extract_uint16
+dig 1
+len
+substring3
+frame_bury 32
+itxn_begin
+intc_2 // appl
+itxn_field TypeEnum
+frame_dig 6
+itxn_field ApplicationID
+pushbytes 0xbd9f92e8 // "updateTokenPair(uint64,uint64,byte[],uint64,byte[])void"
+itxn_field ApplicationArgs
+frame_dig 28
+itob
+itxn_field ApplicationArgs
+frame_dig 29
+itob
+itxn_field ApplicationArgs
+frame_dig 30
+itxn_field ApplicationArgs
+frame_dig 31
+itob
+itxn_field ApplicationArgs
+frame_dig 32
+itxn_field ApplicationArgs
+itxn_submit
+b approveAndExecute_7_l23
+approveAndExecute_7_l16:
+frame_dig 3
+extract 2 0
+frame_bury 21
+frame_dig 21
+intc_0 // 0
+extract_uint64
+frame_bury 22
+frame_dig 21
+pushint 8 // 8
+extract_uint64
+frame_bury 23
+frame_dig 21
+frame_dig 21
+pushint 16 // 16
+extract_uint16
+frame_dig 21
+pushint 26 // 26
+extract_uint16
+substring3
+frame_bury 24
+frame_dig 21
+pushint 18 // 18
+extract_uint64
+frame_bury 25
+frame_dig 21
+frame_dig 21
+pushint 26 // 26
+extract_uint16
+dig 1
+len
+substring3
+frame_bury 26
+itxn_begin
+intc_2 // appl
+itxn_field TypeEnum
+frame_dig 6
+itxn_field ApplicationID
+pushbytes 0xb8eb2e53 // "addTokenPair(uint64,uint64,byte[],uint64,byte[])void"
+itxn_field ApplicationArgs
+frame_dig 22
+itob
+itxn_field ApplicationArgs
+frame_dig 23
+itob
+itxn_field ApplicationArgs
+frame_dig 24
+itxn_field ApplicationArgs
+frame_dig 25
+itob
+itxn_field ApplicationArgs
+frame_dig 26
+itxn_field ApplicationArgs
+itxn_submit
+b approveAndExecute_7_l23
+approveAndExecute_7_l17:
+frame_dig 3
+extract 2 0
+btoi
+frame_bury 20
+itxn_begin
+intc_2 // appl
+itxn_field TypeEnum
+frame_dig 6
+itxn_field ApplicationID
+pushbytes 0x24aba328 // "removeTokenPair(uint64)void"
+itxn_field ApplicationArgs
+frame_dig 20
+itob
+itxn_field ApplicationArgs
+itxn_submit
+b approveAndExecute_7_l23
+approveAndExecute_7_l18:
+frame_dig 3
+extract 2 0
+frame_bury 19
+itxn_begin
+intc_2 // appl
+itxn_field TypeEnum
+frame_dig 6
+itxn_field ApplicationID
+pushbytes 0x51103705 // "setSmgFeeProxy(address)void"
+itxn_field ApplicationArgs
+frame_dig 19
+itxn_field ApplicationArgs
+itxn_submit
+b approveAndExecute_7_l23
+approveAndExecute_7_l19:
+frame_dig 3
+extract 2 0
+btoi
+frame_bury 18
+itxn_begin
+intc_2 // appl
+itxn_field TypeEnum
+frame_dig 6
+itxn_field ApplicationID
+pushbytes 0x92a3f121 // "setHalt(uint64)void"
+itxn_field ApplicationArgs
+frame_dig 18
+itob
+itxn_field ApplicationArgs
+itxn_submit
+b approveAndExecute_7_l23
+approveAndExecute_7_l20:
+frame_dig 3
+extract 2 0
+frame_bury 17
+itxn_begin
+intc_2 // appl
+itxn_field TypeEnum
+frame_dig 6
+itxn_field ApplicationID
+pushbytes 0xbba844a5 // "transferOwner(address)void"
+itxn_field ApplicationArgs
+frame_dig 17
+itxn_field ApplicationArgs
+itxn_submit
+b approveAndExecute_7_l23
+approveAndExecute_7_l21:
+frame_dig 3
+extract 2 0
+frame_bury 16
+itxn_begin
+intc_2 // appl
+itxn_field TypeEnum
+frame_dig 6
+itxn_field ApplicationID
+pushbytes 0x6f8a3645 // "removeAdmin(address)void"
+itxn_field ApplicationArgs
+frame_dig 16
+itxn_field ApplicationArgs
+itxn_submit
+b approveAndExecute_7_l23
+approveAndExecute_7_l22:
+frame_dig 3
+extract 2 0
+frame_bury 15
+itxn_begin
+intc_2 // appl
+itxn_field TypeEnum
+frame_dig 6
+itxn_field ApplicationID
+pushbytes 0x94ae5db8 // "addAdmin(address)void"
+itxn_field ApplicationArgs
+frame_dig 15
+itxn_field ApplicationArgs
+itxn_submit
+approveAndExecute_7_l23:
+intc_1 // 1
+frame_bury 9
+frame_dig 6
+itob
+frame_dig 2
+itob
+concat
+frame_dig 3
+frame_bury 40
+frame_dig 40
+frame_bury 39
+pushint 19 // 19
+frame_bury 37
+frame_dig 37
+itob
+extract 6 0
+concat
+bytec 6 // 0x00
+intc_0 // 0
+frame_dig 9
+setbit
+concat
+frame_dig 39
+concat
+frame_bury 36
+frame_dig 1
+box_del
+pop
+frame_dig 1
+frame_dig 36
+box_put
+retsub
+
+// initialize
+initialize_8:
+proto 2 0
+txn Sender
+global CreatorAddress
+==
+// unauthorized
+assert
+bytec 7 // "initialized"
+app_global_get
+intc_0 // 0
+==
+assert
+bytec_2 // "foundation"
+frame_dig -2
+app_global_put
+bytec 5 // "bridge"
+frame_dig -1
+app_global_put
+bytec 7 // "initialized"
+intc_1 // 1
+app_global_put
+retsub
+
+// update
+update_9:
+proto 0 0
+intc_0 // 0
+return
+
+// delete
+delete_10:
+proto 0 0
+intc_0 // 0
+return
+
+// _acquireReadySmgInfo_caster
+acquireReadySmgInfocaster_11:
+proto 0 0
+bytec_1 // ""
+dup
+txna ApplicationArgs 1
+frame_bury 1
+frame_dig 1
+callsub acquireReadySmgInfo_4
+frame_bury 0
+pushbytes 0x151f7c75 // 0x151f7c75
+frame_dig 0
+concat
+log
+retsub
+
+// proposal_caster
+proposalcaster_12:
+proto 0 0
+intc_0 // 0
+dupn 2
+bytec_1 // ""
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+txna ApplicationArgs 2
+btoi
+frame_bury 1
+txna ApplicationArgs 3
+btoi
+frame_bury 2
+txna ApplicationArgs 4
+frame_bury 3
+frame_dig 0
+frame_dig 1
+frame_dig 2
+frame_dig 3
+callsub proposal_5
+retsub
+
+// approveAndExecute_caster
+approveAndExecutecaster_13:
+proto 0 0
+intc_0 // 0
+bytec_1 // ""
+dupn 2
+txna ApplicationArgs 1
+btoi
+frame_bury 0
+txna ApplicationArgs 2
+frame_bury 1
+txna ApplicationArgs 3
+frame_bury 2
+txna ApplicationArgs 4
+frame_bury 3
+frame_dig 0
+frame_dig 1
+frame_dig 2
+frame_dig 3
+callsub approveAndExecute_7
+retsub
+
+// initialize_caster
+initializecaster_14:
+proto 0 0
+bytec_1 // ""
+intc_0 // 0
+txna ApplicationArgs 1
+frame_bury 0
+txna ApplicationArgs 2
+btoi
+frame_bury 1
+frame_dig 0
+frame_dig 1
+callsub initialize_8
+retsub
+
+// update_caster
+updatecaster_15:
+proto 0 0
+callsub update_9
+retsub
+
+// delete_caster
+deletecaster_16:
+proto 0 0
+callsub delete_10
+retsub

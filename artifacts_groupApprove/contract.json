@@ -1,0 +1,97 @@
+{
+    "name": "groupApprove",
+    "methods": [
+        {
+            "name": "_acquireReadySmgInfo",
+            "args": [
+                {
+                    "type": "byte[32]",
+                    "name": "smgID"
+                }
+            ],
+            "returns": {
+                "type": "byte[64]"
+            }
+        },
+        {
+            "name": "proposal",
+            "args": [
+                {
+                    "type": "uint64",
+                    "name": "_chainId"
+                },
+                {
+                    "type": "uint64",
+                    "name": "_to"
+                },
+                {
+                    "type": "uint64",
+                    "name": "_proposalType"
+                },
+                {
+                    "type": "byte[]",
+                    "name": "_data"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "approveAndExecute",
+            "args": [
+                {
+                    "type": "uint64",
+                    "name": "proposalId"
+                },
+                {
+                    "type": "byte[32]",
+                    "name": "smgID"
+                },
+                {
+                    "type": "byte[64]",
+                    "name": "r"
+                },
+                {
+                    "type": "byte[32]",
+                    "name": "s"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "initialize",
+            "args": [
+                {
+                    "type": "address",
+                    "name": "foundation"
+                },
+                {
+                    "type": "uint64",
+                    "name": "bridge"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "update",
+            "args": [],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "delete",
+            "args": [],
+            "returns": {
+                "type": "void"
+            }
+        }
+    ],
+    "networks": {},
+    "desc": "groupApprove entry point"
+}

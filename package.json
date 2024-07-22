@@ -1,0 +1,19 @@
+{
+  "name": "algo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "algosdk": "^2.8.0",
+    "keccak256": "^1.0.6",
+    "optimist": "^0.6.1",
+    "secp256k1": "^5.0.0",
+    "web3": "^1.10.4",
+    "yargs": "^17.7.2"
+  }
+}
