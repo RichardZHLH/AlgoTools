@@ -6,7 +6,7 @@ const testnet = 1
 let bridge_id, algodClient,updateOwner
 if(testnet) {
     bridge_id = cfg['testnet'].bridge_id
-    updateOwner = 'WBKFZYUAYUXA55ENGAASBFZ2YZ43562VEUKX4PZDA45PVNA76EZZLWLZPU'
+    updateOwner = 'F5H5KOYIH4JFN64UMNTLJ22RR7BRLT7PL3FVZH25ALLJIPK5F5MMPTRGEQ'
     algodClient = new algosdk.Algodv2('b7e384d0317b8050ce45900a94a1931e28540e1f69b2d242b424659c341b4697','https://testnet-api.algonode.cloud')
 }else {
 
