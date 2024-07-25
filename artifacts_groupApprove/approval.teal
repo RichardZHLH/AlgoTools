@@ -39,7 +39,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub deletecaster_16
+callsub deletecaster_17
 intc_1 // 1
 return
 main_l9:
@@ -51,7 +51,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub updatecaster_15
+callsub updatecaster_16
 intc_1 // 1
 return
 main_l10:
@@ -63,7 +63,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub initializecaster_14
+callsub initializecaster_15
 intc_1 // 1
 return
 main_l11:
@@ -75,7 +75,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub approveAndExecutecaster_13
+callsub approveAndExecutecaster_14
 intc_1 // 1
 return
 main_l12:
@@ -87,7 +87,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub proposalcaster_12
+callsub proposalcaster_13
 intc_1 // 1
 return
 main_l13:
@@ -99,7 +99,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub acquireReadySmgInfocaster_11
+callsub acquireReadySmgInfocaster_12
 intc_1 // 1
 return
 main_l14:
@@ -131,25 +131,45 @@ keccak256
 extract 12 20
 retsub
 
+// BytesMinus32
+BytesMinus32_1:
+proto 2 1
+frame_dig -2
+frame_dig -1
+b-
+pop
+pushint 32 // 32
+frame_dig -2
+frame_dig -1
+b-
+len
+-
+bzero
+frame_dig -2
+frame_dig -1
+b-
+concat
+retsub
+
 // check_ecSchnorr_sig
-checkecSchnorrsig_1:
+checkecSchnorrsig_2:
 proto 6 1
-pushint 13000 // 13000
+pushint 14000 // 14000
 pushint 10 // 10
 +
 store 2
-checkecSchnorrsig_1_l1:
+checkecSchnorrsig_2_l1:
 load 2
 global OpcodeBudget
 >
-bnz checkecSchnorrsig_1_l8
+bnz checkecSchnorrsig_2_l8
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 frame_dig -6
 frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 pop
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 frame_dig -3
@@ -157,7 +177,7 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 pop
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 frame_dig -6
@@ -165,7 +185,7 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 pushbytes 0x0000000000000000000000000000000000000000000000000000000000000000 // 0x0000000000000000000000000000000000000000000000000000000000000000
 b!=
 assert
@@ -181,10 +201,10 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 pushbytes 0x7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a0 // 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0
 b>
-bnz checkecSchnorrsig_1_l7
+bnz checkecSchnorrsig_2_l7
 frame_dig -2
 extract 31 1
 btoi
@@ -197,16 +217,16 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 pop
-checkecSchnorrsig_1_l4:
+checkecSchnorrsig_2_l4:
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 frame_dig -6
 frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 frame_dig -2
 extract 31 1
 btoi
@@ -219,7 +239,7 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 ecdsa_pk_recover Secp256k1
 store 4
 store 3
@@ -233,7 +253,7 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 frame_dig -2
 extract 31 1
 btoi
@@ -246,7 +266,7 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 ecdsa_pk_recover Secp256k1
 store 4
 store 3
@@ -265,7 +285,7 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 frame_dig -2
 extract 31 1
 btoi
@@ -278,7 +298,7 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 ecdsa_pk_recover Secp256k1
 store 4
 store 3
@@ -301,7 +321,7 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 frame_dig -2
 extract 31 1
 btoi
@@ -314,7 +334,7 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 ecdsa_pk_recover Secp256k1
 store 4
 store 3
@@ -338,7 +358,7 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 frame_dig -2
 extract 31 1
 btoi
@@ -351,7 +371,7 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 ecdsa_pk_recover Secp256k1
 store 4
 store 3
@@ -367,13 +387,13 @@ frame_dig -1
 concat
 keccak256
 b==
-bnz checkecSchnorrsig_1_l6
+bnz checkecSchnorrsig_2_l6
 intc_0 // 0
-b checkecSchnorrsig_1_l9
-checkecSchnorrsig_1_l6:
+b checkecSchnorrsig_2_l9
+checkecSchnorrsig_2_l6:
 intc_1 // 1
-b checkecSchnorrsig_1_l9
-checkecSchnorrsig_1_l7:
+b checkecSchnorrsig_2_l9
+checkecSchnorrsig_2_l7:
 frame_dig -2
 extract 31 1
 btoi
@@ -391,11 +411,11 @@ frame_dig -5
 b*
 bytec_0 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
-b-
+callsub BytesMinus32_1
+callsub BytesMinus32_1
 pop
-b checkecSchnorrsig_1_l4
-checkecSchnorrsig_1_l8:
+b checkecSchnorrsig_2_l4
+checkecSchnorrsig_2_l8:
 itxn_begin
 intc_2 // appl
 itxn_field TypeEnum
@@ -408,12 +428,12 @@ itxn_field ApprovalProgram
 bytec 4 // 0x068101
 itxn_field ClearStateProgram
 itxn_submit
-b checkecSchnorrsig_1_l1
-checkecSchnorrsig_1_l9:
+b checkecSchnorrsig_2_l1
+checkecSchnorrsig_2_l9:
 retsub
 
 // getProposalKey
-getProposalKey_2:
+getProposalKey_3:
 proto 1 1
 bytec_1 // ""
 pushbytes 0x6d61705461736b // "mapTask"
@@ -431,7 +451,7 @@ frame_bury 0
 retsub
 
 // transferFoundation
-transferFoundation_3:
+transferFoundation_4:
 proto 1 0
 bytec_2 // "foundation"
 frame_dig -1
@@ -441,7 +461,7 @@ log
 retsub
 
 // _acquireReadySmgInfo
-acquireReadySmgInfo_4:
+acquireReadySmgInfo_5:
 proto 1 1
 bytec_1 // ""
 itxn_begin
@@ -466,7 +486,7 @@ assert
 retsub
 
 // proposal
-proposal_5:
+proposal_6:
 proto 4 0
 bytec_1 // ""
 intc_0 // 0
@@ -500,7 +520,7 @@ bytec_3 // "taskCount"
 app_global_get
 frame_bury 2
 frame_dig 2
-callsub getProposalKey_2
+callsub getProposalKey_3
 frame_bury 0
 frame_dig -3
 itob
@@ -540,7 +560,7 @@ app_global_put
 retsub
 
 // verifySignature
-verifySignature_6:
+verifySignature_7:
 proto 4 1
 frame_dig -2
 extract 0 32
@@ -564,11 +584,11 @@ extract 0 32
 frame_dig -2
 extract 32 32
 frame_dig -4
-callsub checkecSchnorrsig_1
+callsub checkecSchnorrsig_2
 retsub
 
 // approveAndExecute
-approveAndExecute_7:
+approveAndExecute_8:
 proto 4 0
 bytec_1 // ""
 dup
@@ -613,7 +633,7 @@ concat
 keccak256
 pop
 frame_dig -3
-callsub acquireReadySmgInfo_4
+callsub acquireReadySmgInfo_5
 frame_bury 0
 frame_dig -4
 itob
@@ -624,12 +644,12 @@ keccak256
 frame_dig 0
 frame_dig -2
 frame_dig -1
-callsub verifySignature_6
+callsub verifySignature_7
 intc_1 // 1
 ==
 assert
 frame_dig -4
-callsub getProposalKey_2
+callsub getProposalKey_3
 frame_bury 1
 frame_dig 1
 box_get
@@ -711,49 +731,49 @@ log
 frame_dig 2
 intc_1 // 1
 ==
-bnz approveAndExecute_7_l22
+bnz approveAndExecute_8_l22
 frame_dig 2
 pushint 2 // 2
 ==
-bnz approveAndExecute_7_l21
+bnz approveAndExecute_8_l21
 frame_dig 2
 pushint 3 // 3
 ==
-bnz approveAndExecute_7_l20
+bnz approveAndExecute_8_l20
 frame_dig 2
 pushint 4 // 4
 ==
-bnz approveAndExecute_7_l19
+bnz approveAndExecute_8_l19
 frame_dig 2
 pushint 5 // 5
 ==
-bnz approveAndExecute_7_l18
+bnz approveAndExecute_8_l18
 frame_dig 2
 pushint 7 // 7
 ==
-bnz approveAndExecute_7_l17
+bnz approveAndExecute_8_l17
 frame_dig 2
 intc_2 // 6
 ==
-bnz approveAndExecute_7_l16
+bnz approveAndExecute_8_l16
 frame_dig 2
 pushint 8 // 8
 ==
-bnz approveAndExecute_7_l15
+bnz approveAndExecute_8_l15
 frame_dig 2
 pushint 9 // 9
 ==
-bnz approveAndExecute_7_l14
+bnz approveAndExecute_8_l14
 frame_dig 2
 pushint 10 // 10
 ==
-bnz approveAndExecute_7_l13
+bnz approveAndExecute_8_l13
 frame_dig 2
 pushint 11 // 11
 ==
-bnz approveAndExecute_7_l12
+bnz approveAndExecute_8_l12
 err
-approveAndExecute_7_l12:
+approveAndExecute_8_l12:
 frame_dig 3
 extract 2 0
 frame_bury 35
@@ -767,8 +787,8 @@ itxn_field ApplicationArgs
 frame_dig 35
 itxn_field ApplicationArgs
 itxn_submit
-b approveAndExecute_7_l23
-approveAndExecute_7_l13:
+b approveAndExecute_8_l23
+approveAndExecute_8_l13:
 frame_dig 3
 extract 2 0
 frame_bury 34
@@ -782,8 +802,8 @@ itxn_field ApplicationArgs
 frame_dig 34
 itxn_field ApplicationArgs
 itxn_submit
-b approveAndExecute_7_l23
-approveAndExecute_7_l14:
+b approveAndExecute_8_l23
+approveAndExecute_8_l14:
 frame_dig 3
 extract 2 0
 frame_bury 33
@@ -792,9 +812,9 @@ txn ApplicationID
 ==
 assert
 frame_dig 33
-callsub transferFoundation_3
-b approveAndExecute_7_l23
-approveAndExecute_7_l15:
+callsub transferFoundation_4
+b approveAndExecute_8_l23
+approveAndExecute_8_l15:
 frame_dig 3
 extract 2 0
 frame_bury 27
@@ -848,8 +868,8 @@ itxn_field ApplicationArgs
 frame_dig 32
 itxn_field ApplicationArgs
 itxn_submit
-b approveAndExecute_7_l23
-approveAndExecute_7_l16:
+b approveAndExecute_8_l23
+approveAndExecute_8_l16:
 frame_dig 3
 extract 2 0
 frame_bury 21
@@ -903,8 +923,8 @@ itxn_field ApplicationArgs
 frame_dig 26
 itxn_field ApplicationArgs
 itxn_submit
-b approveAndExecute_7_l23
-approveAndExecute_7_l17:
+b approveAndExecute_8_l23
+approveAndExecute_8_l17:
 frame_dig 3
 extract 2 0
 btoi
@@ -920,8 +940,8 @@ frame_dig 20
 itob
 itxn_field ApplicationArgs
 itxn_submit
-b approveAndExecute_7_l23
-approveAndExecute_7_l18:
+b approveAndExecute_8_l23
+approveAndExecute_8_l18:
 frame_dig 3
 extract 2 0
 frame_bury 19
@@ -935,8 +955,8 @@ itxn_field ApplicationArgs
 frame_dig 19
 itxn_field ApplicationArgs
 itxn_submit
-b approveAndExecute_7_l23
-approveAndExecute_7_l19:
+b approveAndExecute_8_l23
+approveAndExecute_8_l19:
 frame_dig 3
 extract 2 0
 btoi
@@ -952,8 +972,8 @@ frame_dig 18
 itob
 itxn_field ApplicationArgs
 itxn_submit
-b approveAndExecute_7_l23
-approveAndExecute_7_l20:
+b approveAndExecute_8_l23
+approveAndExecute_8_l20:
 frame_dig 3
 extract 2 0
 frame_bury 17
@@ -967,8 +987,8 @@ itxn_field ApplicationArgs
 frame_dig 17
 itxn_field ApplicationArgs
 itxn_submit
-b approveAndExecute_7_l23
-approveAndExecute_7_l21:
+b approveAndExecute_8_l23
+approveAndExecute_8_l21:
 frame_dig 3
 extract 2 0
 frame_bury 16
@@ -982,8 +1002,8 @@ itxn_field ApplicationArgs
 frame_dig 16
 itxn_field ApplicationArgs
 itxn_submit
-b approveAndExecute_7_l23
-approveAndExecute_7_l22:
+b approveAndExecute_8_l23
+approveAndExecute_8_l22:
 frame_dig 3
 extract 2 0
 frame_bury 15
@@ -997,7 +1017,7 @@ itxn_field ApplicationArgs
 frame_dig 15
 itxn_field ApplicationArgs
 itxn_submit
-approveAndExecute_7_l23:
+approveAndExecute_8_l23:
 intc_1 // 1
 frame_bury 9
 frame_dig 6
@@ -1032,7 +1052,7 @@ box_put
 retsub
 
 // initialize
-initialize_8:
+initialize_9:
 proto 2 0
 txn Sender
 global CreatorAddress
@@ -1056,26 +1076,26 @@ app_global_put
 retsub
 
 // update
-update_9:
+update_10:
 proto 0 0
 intc_0 // 0
 return
 
 // delete
-delete_10:
+delete_11:
 proto 0 0
 intc_0 // 0
 return
 
 // _acquireReadySmgInfo_caster
-acquireReadySmgInfocaster_11:
+acquireReadySmgInfocaster_12:
 proto 0 0
 bytec_1 // ""
 dup
 txna ApplicationArgs 1
 frame_bury 1
 frame_dig 1
-callsub acquireReadySmgInfo_4
+callsub acquireReadySmgInfo_5
 frame_bury 0
 pushbytes 0x151f7c75 // 0x151f7c75
 frame_dig 0
@@ -1084,7 +1104,7 @@ log
 retsub
 
 // proposal_caster
-proposalcaster_12:
+proposalcaster_13:
 proto 0 0
 intc_0 // 0
 dupn 2
@@ -1104,11 +1124,11 @@ frame_dig 0
 frame_dig 1
 frame_dig 2
 frame_dig 3
-callsub proposal_5
+callsub proposal_6
 retsub
 
 // approveAndExecute_caster
-approveAndExecutecaster_13:
+approveAndExecutecaster_14:
 proto 0 0
 intc_0 // 0
 bytec_1 // ""
@@ -1126,11 +1146,11 @@ frame_dig 0
 frame_dig 1
 frame_dig 2
 frame_dig 3
-callsub approveAndExecute_7
+callsub approveAndExecute_8
 retsub
 
 // initialize_caster
-initializecaster_14:
+initializecaster_15:
 proto 0 0
 bytec_1 // ""
 intc_0 // 0
@@ -1141,17 +1161,17 @@ btoi
 frame_bury 1
 frame_dig 0
 frame_dig 1
-callsub initialize_8
+callsub initialize_9
 retsub
 
 // update_caster
-updatecaster_15:
+updatecaster_16:
 proto 0 0
-callsub update_9
+callsub update_10
 retsub
 
 // delete_caster
-deletecaster_16:
+deletecaster_17:
 proto 0 0
-callsub delete_10
+callsub delete_11
 retsub

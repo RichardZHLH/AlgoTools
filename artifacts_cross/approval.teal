@@ -107,7 +107,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub setStoremanGroupStatuscaster_58
+callsub setStoremanGroupStatuscaster_59
 intc_1 // 1
 return
 main_l26:
@@ -119,7 +119,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub setStoremanGroupConfigcaster_57
+callsub setStoremanGroupConfigcaster_58
 intc_1 // 1
 return
 main_l27:
@@ -131,7 +131,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub deletecaster_56
+callsub deletecaster_57
 intc_1 // 1
 return
 main_l28:
@@ -143,7 +143,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub updatecaster_55
+callsub updatecaster_56
 intc_1 // 1
 return
 main_l29:
@@ -155,7 +155,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub initializecaster_54
+callsub initializecaster_55
 intc_1 // 1
 return
 main_l30:
@@ -167,7 +167,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub updateTokenPaircaster_53
+callsub updateTokenPaircaster_54
 intc_1 // 1
 return
 main_l31:
@@ -179,7 +179,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub removeTokenPaircaster_52
+callsub removeTokenPaircaster_53
 intc_1 // 1
 return
 main_l32:
@@ -191,7 +191,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub addTokenPaircaster_51
+callsub addTokenPaircaster_52
 intc_1 // 1
 return
 main_l33:
@@ -203,7 +203,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub optintokenidcaster_50
+callsub optintokenidcaster_51
 intc_1 // 1
 return
 main_l34:
@@ -215,7 +215,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub smgReleasecaster_49
+callsub smgReleasecaster_50
 intc_1 // 1
 return
 main_l35:
@@ -227,7 +227,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub acquireReadySmgInfocaster_48
+callsub acquireReadySmgInfocaster_49
 intc_1 // 1
 return
 main_l36:
@@ -239,7 +239,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub setSmgFeeProxycaster_47
+callsub setSmgFeeProxycaster_48
 intc_1 // 1
 return
 main_l37:
@@ -251,7 +251,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub userLockcaster_46
+callsub userLockcaster_47
 intc_1 // 1
 return
 main_l38:
@@ -263,7 +263,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub setFeescaster_45
+callsub setFeescaster_46
 intc_1 // 1
 return
 main_l39:
@@ -275,7 +275,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub setFeecaster_44
+callsub setFeecaster_45
 intc_1 // 1
 return
 main_l40:
@@ -287,7 +287,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub setTokenPairFeescaster_43
+callsub setTokenPairFeescaster_44
 intc_1 // 1
 return
 main_l41:
@@ -299,7 +299,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub setTokenPairFeecaster_42
+callsub setTokenPairFeecaster_43
 intc_1 // 1
 return
 main_l42:
@@ -311,7 +311,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub setHaltcaster_41
+callsub setHaltcaster_42
 intc_1 // 1
 return
 main_l43:
@@ -323,7 +323,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub transferOracleAdmincaster_40
+callsub transferOracleAdmincaster_41
 intc_1 // 1
 return
 main_l44:
@@ -335,7 +335,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub transferUpdateOwnercaster_39
+callsub transferUpdateOwnercaster_40
 intc_1 // 1
 return
 main_l45:
@@ -347,7 +347,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub transferOwnercaster_38
+callsub transferOwnercaster_39
 intc_1 // 1
 return
 main_l46:
@@ -359,7 +359,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub removeAdmincaster_37
+callsub removeAdmincaster_38
 intc_1 // 1
 return
 main_l47:
@@ -371,7 +371,7 @@ intc_0 // 0
 !=
 &&
 assert
-callsub addAdmincaster_36
+callsub addAdmincaster_37
 intc_1 // 1
 return
 main_l48:
@@ -403,25 +403,45 @@ keccak256
 extract 12 20
 retsub
 
+// BytesMinus32
+BytesMinus32_1:
+proto 2 1
+frame_dig -2
+frame_dig -1
+b-
+pop
+pushint 32 // 32
+frame_dig -2
+frame_dig -1
+b-
+len
+-
+bzero
+frame_dig -2
+frame_dig -1
+b-
+concat
+retsub
+
 // check_ecSchnorr_sig
-checkecSchnorrsig_1:
+checkecSchnorrsig_2:
 proto 6 1
-pushint 13000 // 13000
+pushint 14000 // 14000
 pushint 10 // 10
 +
 store 30
-checkecSchnorrsig_1_l1:
+checkecSchnorrsig_2_l1:
 load 30
 global OpcodeBudget
 >
-bnz checkecSchnorrsig_1_l8
+bnz checkecSchnorrsig_2_l8
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 frame_dig -6
 frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 pop
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 frame_dig -3
@@ -429,7 +449,7 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 pop
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 frame_dig -6
@@ -437,7 +457,7 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 pushbytes 0x0000000000000000000000000000000000000000000000000000000000000000 // 0x0000000000000000000000000000000000000000000000000000000000000000
 b!=
 assert
@@ -453,10 +473,10 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 pushbytes 0x7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a0 // 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0
 b>
-bnz checkecSchnorrsig_1_l7
+bnz checkecSchnorrsig_2_l7
 frame_dig -2
 extract 31 1
 btoi
@@ -469,16 +489,16 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 pop
-checkecSchnorrsig_1_l4:
+checkecSchnorrsig_2_l4:
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 frame_dig -6
 frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 frame_dig -2
 extract 31 1
 btoi
@@ -491,7 +511,7 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 ecdsa_pk_recover Secp256k1
 store 32
 store 31
@@ -505,7 +525,7 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 frame_dig -2
 extract 31 1
 btoi
@@ -518,7 +538,7 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 ecdsa_pk_recover Secp256k1
 store 32
 store 31
@@ -537,7 +557,7 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 frame_dig -2
 extract 31 1
 btoi
@@ -550,7 +570,7 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 ecdsa_pk_recover Secp256k1
 store 32
 store 31
@@ -573,7 +593,7 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 frame_dig -2
 extract 31 1
 btoi
@@ -586,7 +606,7 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 ecdsa_pk_recover Secp256k1
 store 32
 store 31
@@ -610,7 +630,7 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 frame_dig -2
 extract 31 1
 btoi
@@ -623,7 +643,7 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
+callsub BytesMinus32_1
 ecdsa_pk_recover Secp256k1
 store 32
 store 31
@@ -639,13 +659,13 @@ frame_dig -1
 concat
 keccak256
 b==
-bnz checkecSchnorrsig_1_l6
+bnz checkecSchnorrsig_2_l6
 intc_0 // 0
-b checkecSchnorrsig_1_l9
-checkecSchnorrsig_1_l6:
+b checkecSchnorrsig_2_l9
+checkecSchnorrsig_2_l6:
 intc_1 // 1
-b checkecSchnorrsig_1_l9
-checkecSchnorrsig_1_l7:
+b checkecSchnorrsig_2_l9
+checkecSchnorrsig_2_l7:
 frame_dig -2
 extract 31 1
 btoi
@@ -663,11 +683,11 @@ frame_dig -5
 b*
 bytec_1 // 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 b%
-b-
-b-
+callsub BytesMinus32_1
+callsub BytesMinus32_1
 pop
-b checkecSchnorrsig_1_l4
-checkecSchnorrsig_1_l8:
+b checkecSchnorrsig_2_l4
+checkecSchnorrsig_2_l8:
 itxn_begin
 pushint 6 // appl
 itxn_field TypeEnum
@@ -680,12 +700,12 @@ itxn_field ApprovalProgram
 bytec 8 // 0x068101
 itxn_field ClearStateProgram
 itxn_submit
-b checkecSchnorrsig_1_l1
-checkecSchnorrsig_1_l9:
+b checkecSchnorrsig_2_l1
+checkecSchnorrsig_2_l9:
 retsub
 
 // getFromToChainID
-getFromToChainID_2:
+getFromToChainID_3:
 proto 2 1
 intc_0 // 0
 frame_dig -2
@@ -697,7 +717,7 @@ frame_bury 0
 retsub
 
 // getTokenPairFeeKey
-getTokenPairFeeKey_3:
+getTokenPairFeeKey_4:
 proto 1 1
 bytec_0 // ""
 pushbytes 0x6d6170546f6b656e50616972436f6e7472616374466565 // "mapTokenPairContractFee"
@@ -715,7 +735,7 @@ frame_bury 0
 retsub
 
 // getTokenPairInfoKey
-getTokenPairInfoKey_4:
+getTokenPairInfoKey_5:
 proto 1 1
 bytec_0 // ""
 pushbytes 0x6d6170546f6b656e50616972496e666f // "mapTokenPairInfo"
@@ -733,7 +753,7 @@ frame_bury 0
 retsub
 
 // getAdminKey
-getAdminKey_5:
+getAdminKey_6:
 proto 1 1
 bytec_0 // ""
 pushbytes 0x6d617041646d696e // "mapAdmin"
@@ -750,13 +770,13 @@ frame_bury 0
 retsub
 
 // getContractFeeKey
-getContractFeeKey_6:
+getContractFeeKey_7:
 proto 2 1
 bytec_0 // ""
 intc_0 // 0
 frame_dig -2
 frame_dig -1
-callsub getFromToChainID_2
+callsub getFromToChainID_3
 frame_bury 1
 pushbytes 0x6d6170436f6e7472616374466565 // "mapContractFee"
 frame_dig 1
@@ -773,13 +793,13 @@ frame_bury 0
 retsub
 
 // getAgentFeeKey
-getAgentFeeKey_7:
+getAgentFeeKey_8:
 proto 2 1
 bytec_0 // ""
 intc_0 // 0
 frame_dig -2
 frame_dig -1
-callsub getFromToChainID_2
+callsub getFromToChainID_3
 frame_bury 1
 pushbytes 0x6d61704167656e74466565 // "mapAgentFee"
 frame_dig 1
@@ -796,7 +816,7 @@ frame_bury 0
 retsub
 
 // do_axfer
-doaxfer_8:
+doaxfer_9:
 proto 3 0
 itxn_begin
 pushint 4 // axfer
@@ -813,16 +833,16 @@ itxn_submit
 retsub
 
 // do_opt_in
-dooptin_9:
+dooptin_10:
 proto 1 0
 global CurrentApplicationAddress
 frame_dig -1
 intc_0 // 0
-callsub doaxfer_8
+callsub doaxfer_9
 retsub
 
 // addAdmin
-addAdmin_10:
+addAdmin_11:
 proto 1 0
 bytec_0 // ""
 intc_0 // 0
@@ -833,7 +853,7 @@ app_global_get
 // unauthorized
 assert
 frame_dig -1
-callsub getAdminKey_5
+callsub getAdminKey_6
 frame_bury 0
 intc_1 // 1
 frame_bury 1
@@ -847,7 +867,7 @@ box_put
 retsub
 
 // removeAdmin
-removeAdmin_11:
+removeAdmin_12:
 proto 1 0
 bytec_0 // ""
 txn Sender
@@ -857,7 +877,7 @@ app_global_get
 // unauthorized
 assert
 frame_dig -1
-callsub getAdminKey_5
+callsub getAdminKey_6
 frame_bury 0
 frame_dig 0
 box_del
@@ -865,7 +885,7 @@ pop
 retsub
 
 // onlyAdmin
-onlyAdmin_12:
+onlyAdmin_13:
 proto 1 1
 bytec_0 // ""
 dup
@@ -877,24 +897,24 @@ pushint 32 // 32
 ==
 assert
 frame_dig 1
-callsub getAdminKey_5
+callsub getAdminKey_6
 frame_bury 0
 frame_dig 0
 box_len
 store 1
 store 0
 load 1
-bnz onlyAdmin_12_l2
+bnz onlyAdmin_13_l2
 intc_0 // 0
-b onlyAdmin_12_l3
-onlyAdmin_12_l2:
+b onlyAdmin_13_l3
+onlyAdmin_13_l2:
 intc_1 // 1
-onlyAdmin_12_l3:
+onlyAdmin_13_l3:
 frame_bury 0
 retsub
 
 // transferOwner
-transferOwner_13:
+transferOwner_14:
 proto 1 0
 txn Sender
 bytec_2 // "owner"
@@ -908,7 +928,7 @@ app_global_put
 retsub
 
 // transferUpdateOwner
-transferUpdateOwner_14:
+transferUpdateOwner_15:
 proto 1 0
 txn Sender
 bytec_2 // "owner"
@@ -922,7 +942,7 @@ app_global_put
 retsub
 
 // transferOracleAdmin
-transferOracleAdmin_15:
+transferOracleAdmin_16:
 proto 1 0
 txn Sender
 bytec_2 // "owner"
@@ -936,7 +956,7 @@ app_global_put
 retsub
 
 // setHalt
-setHalt_16:
+setHalt_17:
 proto 1 0
 txn Sender
 bytec_2 // "owner"
@@ -950,15 +970,15 @@ app_global_put
 retsub
 
 // setTokenPairFee
-setTokenPairFee_17:
+setTokenPairFee_18:
 proto 2 0
 bytec_0 // ""
 txn Sender
-callsub onlyAdmin_12
+callsub onlyAdmin_13
 // unauthorized
 assert
 frame_dig -2
-callsub getTokenPairFeeKey_3
+callsub getTokenPairFeeKey_4
 frame_bury 0
 frame_dig 0
 box_del
@@ -970,18 +990,18 @@ box_put
 retsub
 
 // setTokenPairFees
-setTokenPairFees_18:
+setTokenPairFees_19:
 proto 2 0
 bytec_0 // ""
 intc_0 // 0
 dupn 4
 txn Sender
-callsub onlyAdmin_12
+callsub onlyAdmin_13
 // unauthorized
 assert
 intc_0 // 0
 store 2
-setTokenPairFees_18_l1:
+setTokenPairFees_19_l1:
 load 2
 frame_dig -2
 intc_0 // 0
@@ -989,7 +1009,7 @@ extract_uint16
 frame_bury 3
 frame_dig 3
 <
-bz setTokenPairFees_18_l3
+bz setTokenPairFees_19_l3
 frame_dig -2
 pushint 8 // 8
 load 2
@@ -999,7 +1019,7 @@ intc_2 // 2
 extract_uint64
 frame_bury 1
 frame_dig 1
-callsub getTokenPairFeeKey_3
+callsub getTokenPairFeeKey_4
 frame_bury 0
 frame_dig -1
 pushint 8 // 8
@@ -1020,26 +1040,26 @@ load 2
 intc_1 // 1
 +
 store 2
-b setTokenPairFees_18_l1
-setTokenPairFees_18_l3:
+b setTokenPairFees_19_l1
+setTokenPairFees_19_l3:
 retsub
 
 // setFee
-setFee_19:
+setFee_20:
 proto 4 0
 bytec_0 // ""
 dup
 txn Sender
-callsub onlyAdmin_12
+callsub onlyAdmin_13
 // unauthorized
 assert
 frame_dig -4
 frame_dig -3
-callsub getContractFeeKey_6
+callsub getContractFeeKey_7
 frame_bury 0
 frame_dig -4
 frame_dig -3
-callsub getAgentFeeKey_7
+callsub getAgentFeeKey_8
 frame_bury 1
 frame_dig 0
 box_del
@@ -1058,19 +1078,19 @@ box_put
 retsub
 
 // setFees
-setFees_20:
+setFees_21:
 proto 4 0
 bytec_0 // ""
 dup
 intc_0 // 0
 dupn 8
 txn Sender
-callsub onlyAdmin_12
+callsub onlyAdmin_13
 // unauthorized
 assert
 intc_0 // 0
 store 3
-setFees_20_l1:
+setFees_21_l1:
 load 3
 frame_dig -2
 intc_0 // 0
@@ -1078,7 +1098,7 @@ extract_uint16
 frame_bury 6
 frame_dig 6
 <
-bz setFees_20_l3
+bz setFees_21_l3
 frame_dig -4
 pushint 8 // 8
 load 3
@@ -1113,7 +1133,7 @@ extract_uint64
 frame_bury 5
 frame_dig 2
 frame_dig 3
-callsub getContractFeeKey_6
+callsub getContractFeeKey_7
 frame_bury 0
 frame_dig 0
 box_del
@@ -1124,7 +1144,7 @@ itob
 box_put
 frame_dig 2
 frame_dig 3
-callsub getAgentFeeKey_7
+callsub getAgentFeeKey_8
 frame_bury 1
 frame_dig 1
 box_del
@@ -1137,12 +1157,12 @@ load 3
 intc_1 // 1
 +
 store 3
-b setFees_20_l1
-setFees_20_l3:
+b setFees_21_l1
+setFees_21_l3:
 retsub
 
 // getCrossTokenInfo
-getCrossTokenInfo_21:
+getCrossTokenInfo_22:
 proto 1 1
 bytec_0 // ""
 intc_0 // 0
@@ -1160,19 +1180,19 @@ dup
 intc_0 // 0
 frame_bury 3
 frame_dig -1
-callsub getTokenPairFeeKey_3
+callsub getTokenPairFeeKey_4
 frame_bury 2
 frame_dig 2
 box_len
 store 5
 store 4
 load 5
-bnz getCrossTokenInfo_21_l23
+bnz getCrossTokenInfo_22_l23
 intc_0 // 0
 frame_bury 1
-getCrossTokenInfo_21_l2:
+getCrossTokenInfo_22_l2:
 frame_dig -1
-callsub getTokenPairInfoKey_4
+callsub getTokenPairInfoKey_5
 frame_bury 2
 frame_dig 2
 box_get
@@ -1193,32 +1213,32 @@ frame_bury 6
 frame_dig 6
 intc_0 // 0
 ==
-bnz getCrossTokenInfo_21_l22
+bnz getCrossTokenInfo_22_l22
 frame_dig 5
 intc_0 // 0
 ==
-bnz getCrossTokenInfo_21_l21
-frame_dig 5
-intc 5 // 2147483931
-==
-bnz getCrossTokenInfo_21_l14
+bnz getCrossTokenInfo_22_l21
 frame_dig 6
 intc 5 // 2147483931
 ==
-bnz getCrossTokenInfo_21_l7
+bnz getCrossTokenInfo_22_l14
+frame_dig 5
+intc 5 // 2147483931
+==
+bnz getCrossTokenInfo_22_l7
 intc_0 // 0
 return
-getCrossTokenInfo_21_l7:
+getCrossTokenInfo_22_l7:
 frame_dig 1
 intc_0 // 0
 ==
-bnz getCrossTokenInfo_21_l12
-getCrossTokenInfo_21_l8:
+bnz getCrossTokenInfo_22_l12
+getCrossTokenInfo_22_l8:
 frame_dig 1
 intc_0 // 0
 ==
-bnz getCrossTokenInfo_21_l10
-getCrossTokenInfo_21_l9:
+bnz getCrossTokenInfo_22_l10
+getCrossTokenInfo_22_l9:
 frame_dig 4
 frame_dig 4
 pushint 26 // 26
@@ -1226,7 +1246,7 @@ extract_uint16
 dig 1
 len
 substring3
-frame_bury 7
+frame_bury 8
 frame_dig 4
 frame_dig 4
 pushint 16 // 16
@@ -1235,19 +1255,19 @@ frame_dig 4
 pushint 26 // 26
 extract_uint16
 substring3
-frame_bury 8
-b getCrossTokenInfo_21_l24
-getCrossTokenInfo_21_l10:
-frame_dig 6
+frame_bury 7
+b getCrossTokenInfo_22_l24
+getCrossTokenInfo_22_l10:
+frame_dig 5
 frame_dig 3
-callsub getContractFeeKey_6
+callsub getContractFeeKey_7
 frame_bury 2
 frame_dig 2
 box_len
 store 23
 store 22
 load 23
-bz getCrossTokenInfo_21_l9
+bz getCrossTokenInfo_22_l9
 frame_dig 2
 box_get
 store 25
@@ -1257,18 +1277,18 @@ assert
 load 24
 btoi
 frame_bury 1
-b getCrossTokenInfo_21_l9
-getCrossTokenInfo_21_l12:
-frame_dig 6
+b getCrossTokenInfo_22_l9
+getCrossTokenInfo_22_l12:
 frame_dig 5
-callsub getContractFeeKey_6
+frame_dig 6
+callsub getContractFeeKey_7
 frame_bury 2
 frame_dig 2
 box_len
 store 19
 store 18
 load 19
-bz getCrossTokenInfo_21_l8
+bz getCrossTokenInfo_22_l8
 frame_dig 2
 box_get
 store 21
@@ -1278,18 +1298,18 @@ assert
 load 20
 btoi
 frame_bury 1
-b getCrossTokenInfo_21_l8
-getCrossTokenInfo_21_l14:
+b getCrossTokenInfo_22_l8
+getCrossTokenInfo_22_l14:
 frame_dig 1
 intc_0 // 0
 ==
-bnz getCrossTokenInfo_21_l19
-getCrossTokenInfo_21_l15:
+bnz getCrossTokenInfo_22_l19
+getCrossTokenInfo_22_l15:
 frame_dig 1
 intc_0 // 0
 ==
-bnz getCrossTokenInfo_21_l17
-getCrossTokenInfo_21_l16:
+bnz getCrossTokenInfo_22_l17
+getCrossTokenInfo_22_l16:
 frame_dig 4
 frame_dig 4
 pushint 26 // 26
@@ -1297,7 +1317,7 @@ extract_uint16
 dig 1
 len
 substring3
-frame_bury 8
+frame_bury 7
 frame_dig 4
 frame_dig 4
 pushint 16 // 16
@@ -1306,19 +1326,19 @@ frame_dig 4
 pushint 26 // 26
 extract_uint16
 substring3
-frame_bury 7
-b getCrossTokenInfo_21_l24
-getCrossTokenInfo_21_l17:
-frame_dig 5
+frame_bury 8
+b getCrossTokenInfo_22_l24
+getCrossTokenInfo_22_l17:
+frame_dig 6
 frame_dig 3
-callsub getContractFeeKey_6
+callsub getContractFeeKey_7
 frame_bury 2
 frame_dig 2
 box_len
 store 15
 store 14
 load 15
-bz getCrossTokenInfo_21_l16
+bz getCrossTokenInfo_22_l16
 frame_dig 2
 box_get
 store 17
@@ -1328,18 +1348,18 @@ assert
 load 16
 btoi
 frame_bury 1
-b getCrossTokenInfo_21_l16
-getCrossTokenInfo_21_l19:
-frame_dig 5
+b getCrossTokenInfo_22_l16
+getCrossTokenInfo_22_l19:
 frame_dig 6
-callsub getContractFeeKey_6
+frame_dig 5
+callsub getContractFeeKey_7
 frame_bury 2
 frame_dig 2
 box_len
 store 11
 store 10
 load 11
-bz getCrossTokenInfo_21_l15
+bz getCrossTokenInfo_22_l15
 frame_dig 2
 box_get
 store 13
@@ -1349,14 +1369,14 @@ assert
 load 12
 btoi
 frame_bury 1
-b getCrossTokenInfo_21_l15
-getCrossTokenInfo_21_l21:
+b getCrossTokenInfo_22_l15
+getCrossTokenInfo_22_l21:
 intc_0 // 0
 return
-getCrossTokenInfo_21_l22:
+getCrossTokenInfo_22_l22:
 intc_0 // 0
 return
-getCrossTokenInfo_21_l23:
+getCrossTokenInfo_22_l23:
 frame_dig 2
 box_get
 store 7
@@ -1366,8 +1386,8 @@ assert
 load 6
 btoi
 frame_bury 1
-b getCrossTokenInfo_21_l2
-getCrossTokenInfo_21_l24:
+b getCrossTokenInfo_22_l2
+getCrossTokenInfo_22_l24:
 frame_dig 1
 itob
 frame_dig 8
@@ -1407,7 +1427,7 @@ frame_bury 0
 retsub
 
 // userLock
-userLock_22:
+userLock_23:
 proto 4 0
 intc_0 // 0
 bytec_0 // ""
@@ -1427,7 +1447,7 @@ intc_0 // 0
 ==
 assert
 frame_dig -3
-callsub getCrossTokenInfo_21
+callsub getCrossTokenInfo_22
 frame_bury 4
 frame_dig 4
 intc_0 // 0
@@ -1453,14 +1473,14 @@ frame_bury 2
 frame_dig 0
 intc_0 // 0
 >
-bnz userLock_22_l4
-userLock_22_l1:
+bnz userLock_23_l4
+userLock_23_l1:
 frame_dig 2
 extract 2 0
 intc_0 // 0
 itob
 ==
-bnz userLock_22_l3
+bnz userLock_23_l3
 global GroupSize
 pushint 3 // 3
 ==
@@ -1506,8 +1526,8 @@ frame_dig 6
 len
 ==
 assert
-b userLock_22_l5
-userLock_22_l3:
+b userLock_23_l5
+userLock_23_l3:
 global GroupSize
 intc_2 // 2
 ==
@@ -1537,8 +1557,8 @@ frame_dig 6
 len
 ==
 assert
-b userLock_22_l5
-userLock_22_l4:
+b userLock_23_l5
+userLock_23_l4:
 itxn_begin
 intc_1 // pay
 itxn_field TypeEnum
@@ -1548,8 +1568,8 @@ itxn_field Receiver
 frame_dig 0
 itxn_field Amount
 itxn_submit
-b userLock_22_l1
-userLock_22_l5:
+b userLock_23_l1
+userLock_23_l5:
 pushbytes 0x000e557365724c6f636b4c6f67676572 // 0x000e557365724c6f636b4c6f67676572
 frame_bury 7
 frame_dig 2
@@ -1610,7 +1630,7 @@ log
 retsub
 
 // setSmgFeeProxy
-setSmgFeeProxy_23:
+setSmgFeeProxy_24:
 proto 1 0
 txn Sender
 bytec_2 // "owner"
@@ -1624,7 +1644,7 @@ app_global_put
 retsub
 
 // verifySignature
-verifySignature_24:
+verifySignature_25:
 proto 4 1
 frame_dig -2
 extract 0 32
@@ -1648,19 +1668,19 @@ extract 0 32
 frame_dig -2
 extract 32 32
 frame_dig -4
-callsub checkecSchnorrsig_1
+callsub checkecSchnorrsig_2
 intc_1 // 1
 ==
-bnz verifySignature_24_l2
+bnz verifySignature_25_l2
 intc_0 // 0
-b verifySignature_24_l3
-verifySignature_24_l2:
+b verifySignature_25_l3
+verifySignature_25_l2:
 intc_1 // 1
-verifySignature_24_l3:
+verifySignature_25_l3:
 retsub
 
 // acquireReadySmgInfo
-acquireReadySmgInfo_25:
+acquireReadySmgInfo_26:
 proto 1 1
 bytec_0 // ""
 dup
@@ -1704,7 +1724,7 @@ frame_bury 0
 retsub
 
 // smgRelease
-smgRelease_26:
+smgRelease_27:
 proto 9 0
 bytec_0 // ""
 intc_0 // 0
@@ -1794,7 +1814,7 @@ box_len
 store 29
 store 28
 load 29
-bnz smgRelease_26_l6
+bnz smgRelease_27_l6
 intc_1 // 1
 frame_bury 1
 frame_dig -9
@@ -1807,7 +1827,7 @@ frame_dig 1
 setbyte
 box_put
 frame_dig -8
-callsub acquireReadySmgInfo_25
+callsub acquireReadySmgInfo_26
 frame_bury 0
 intc 5 // 2147483931
 itob
@@ -1831,22 +1851,22 @@ keccak256
 frame_dig 0
 frame_dig -2
 frame_dig -1
-callsub verifySignature_24
+callsub verifySignature_25
 intc_1 // 1
 ==
 assert
 frame_dig -4
 intc_0 // 0
 ==
-bnz smgRelease_26_l4
+bnz smgRelease_27_l4
 frame_dig -3
 frame_dig -4
 frame_dig -6
-callsub doaxfer_8
+callsub doaxfer_9
 frame_dig -5
 intc_0 // 0
 >
-bz smgRelease_26_l7
+bz smgRelease_27_l7
 bytec_3 // "feeProxy"
 app_global_get
 frame_bury 3
@@ -1858,13 +1878,13 @@ assert
 frame_dig 3
 frame_dig -4
 frame_dig -5
-callsub doaxfer_8
-b smgRelease_26_l7
-smgRelease_26_l4:
+callsub doaxfer_9
+b smgRelease_27_l7
+smgRelease_27_l4:
 itxn_begin
 intc_1 // pay
 itxn_field TypeEnum
-txn Sender
+frame_dig -3
 itxn_field Receiver
 frame_dig -6
 itxn_field Amount
@@ -1872,7 +1892,7 @@ itxn_submit
 frame_dig -5
 intc_0 // 0
 >
-bz smgRelease_26_l7
+bz smgRelease_27_l7
 bytec_3 // "feeProxy"
 app_global_get
 frame_bury 3
@@ -1889,26 +1909,26 @@ itxn_field Receiver
 frame_dig -5
 itxn_field Amount
 itxn_submit
-b smgRelease_26_l7
-smgRelease_26_l6:
+b smgRelease_27_l7
+smgRelease_27_l6:
 intc_0 // 0
 return
-smgRelease_26_l7:
+smgRelease_27_l7:
 retsub
 
 // opt_in_token_id
-optintokenid_27:
+optintokenid_28:
 proto 1 0
 txn Sender
-callsub onlyAdmin_12
+callsub onlyAdmin_13
 // unauthorized
 assert
 frame_dig -1
-callsub dooptin_9
+callsub dooptin_10
 retsub
 
 // addTokenPair
-addTokenPair_28:
+addTokenPair_29:
 proto 5 0
 bytec_0 // ""
 dupn 2
@@ -1927,7 +1947,7 @@ app_global_get
 // unauthorized
 assert
 frame_dig -5
-callsub getTokenPairInfoKey_4
+callsub getTokenPairInfoKey_5
 frame_bury 0
 frame_dig 0
 box_len
@@ -2055,7 +2075,7 @@ log
 retsub
 
 // removeTokenPair
-removeTokenPair_29:
+removeTokenPair_30:
 proto 1 0
 bytec_0 // ""
 txn Sender
@@ -2065,7 +2085,7 @@ app_global_get
 // unauthorized
 assert
 frame_dig -1
-callsub getTokenPairInfoKey_4
+callsub getTokenPairInfoKey_5
 frame_bury 0
 frame_dig 0
 box_del
@@ -2073,7 +2093,7 @@ pop
 retsub
 
 // updateTokenPair
-updateTokenPair_30:
+updateTokenPair_31:
 proto 5 0
 bytec_0 // ""
 dupn 2
@@ -2092,7 +2112,7 @@ app_global_get
 // unauthorized
 assert
 frame_dig -5
-callsub getTokenPairInfoKey_4
+callsub getTokenPairInfoKey_5
 frame_bury 0
 frame_dig 0
 box_len
@@ -2220,7 +2240,7 @@ log
 retsub
 
 // initialize
-initialize_31:
+initialize_32:
 proto 5 0
 bytec_0 // ""
 intc_0 // 0
@@ -2247,7 +2267,7 @@ bytec_3 // "feeProxy"
 frame_dig -2
 app_global_put
 frame_dig -3
-callsub getAdminKey_5
+callsub getAdminKey_6
 frame_bury 0
 intc_1 // 1
 frame_bury 1
@@ -2264,7 +2284,7 @@ app_global_put
 retsub
 
 // update
-update_32:
+update_33:
 proto 0 0
 txn Sender
 bytec 5 // "updateOwner"
@@ -2276,13 +2296,13 @@ intc_1 // 1
 return
 
 // delete
-delete_33:
+delete_34:
 proto 0 0
 intc_0 // 0
 return
 
 // setStoremanGroupConfig
-setStoremanGroupConfig_34:
+setStoremanGroupConfig_35:
 proto 5 0
 bytec_0 // ""
 intc_0 // 0
@@ -2317,7 +2337,7 @@ box_put
 retsub
 
 // setStoremanGroupStatus
-setStoremanGroupStatus_35:
+setStoremanGroupStatus_36:
 proto 2 0
 bytec_0 // ""
 dup
@@ -2375,68 +2395,68 @@ box_put
 retsub
 
 // addAdmin_caster
-addAdmincaster_36:
+addAdmincaster_37:
 proto 0 0
 bytec_0 // ""
 txna ApplicationArgs 1
 frame_bury 0
 frame_dig 0
-callsub addAdmin_10
+callsub addAdmin_11
 retsub
 
 // removeAdmin_caster
-removeAdmincaster_37:
+removeAdmincaster_38:
 proto 0 0
 bytec_0 // ""
 txna ApplicationArgs 1
 frame_bury 0
 frame_dig 0
-callsub removeAdmin_11
+callsub removeAdmin_12
 retsub
 
 // transferOwner_caster
-transferOwnercaster_38:
+transferOwnercaster_39:
 proto 0 0
 bytec_0 // ""
 txna ApplicationArgs 1
 frame_bury 0
 frame_dig 0
-callsub transferOwner_13
+callsub transferOwner_14
 retsub
 
 // transferUpdateOwner_caster
-transferUpdateOwnercaster_39:
+transferUpdateOwnercaster_40:
 proto 0 0
 bytec_0 // ""
 txna ApplicationArgs 1
 frame_bury 0
 frame_dig 0
-callsub transferUpdateOwner_14
+callsub transferUpdateOwner_15
 retsub
 
 // transferOracleAdmin_caster
-transferOracleAdmincaster_40:
+transferOracleAdmincaster_41:
 proto 0 0
 bytec_0 // ""
 txna ApplicationArgs 1
 frame_bury 0
 frame_dig 0
-callsub transferOracleAdmin_15
+callsub transferOracleAdmin_16
 retsub
 
 // setHalt_caster
-setHaltcaster_41:
+setHaltcaster_42:
 proto 0 0
 intc_0 // 0
 txna ApplicationArgs 1
 btoi
 frame_bury 0
 frame_dig 0
-callsub setHalt_16
+callsub setHalt_17
 retsub
 
 // setTokenPairFee_caster
-setTokenPairFeecaster_42:
+setTokenPairFeecaster_43:
 proto 0 0
 intc_0 // 0
 dup
@@ -2448,11 +2468,11 @@ btoi
 frame_bury 1
 frame_dig 0
 frame_dig 1
-callsub setTokenPairFee_17
+callsub setTokenPairFee_18
 retsub
 
 // setTokenPairFees_caster
-setTokenPairFeescaster_43:
+setTokenPairFeescaster_44:
 proto 0 0
 bytec_0 // ""
 dup
@@ -2462,11 +2482,11 @@ txna ApplicationArgs 2
 frame_bury 1
 frame_dig 0
 frame_dig 1
-callsub setTokenPairFees_18
+callsub setTokenPairFees_19
 retsub
 
 // setFee_caster
-setFeecaster_44:
+setFeecaster_45:
 proto 0 0
 intc_0 // 0
 dupn 3
@@ -2486,11 +2506,11 @@ frame_dig 0
 frame_dig 1
 frame_dig 2
 frame_dig 3
-callsub setFee_19
+callsub setFee_20
 retsub
 
 // setFees_caster
-setFeescaster_45:
+setFeescaster_46:
 proto 0 0
 bytec_0 // ""
 dupn 3
@@ -2506,11 +2526,11 @@ frame_dig 0
 frame_dig 1
 frame_dig 2
 frame_dig 3
-callsub setFees_20
+callsub setFees_21
 retsub
 
 // userLock_caster
-userLockcaster_46:
+userLockcaster_47:
 proto 0 0
 bytec_0 // ""
 intc_0 // 0
@@ -2530,28 +2550,28 @@ frame_dig 0
 frame_dig 1
 frame_dig 2
 frame_dig 3
-callsub userLock_22
+callsub userLock_23
 retsub
 
 // setSmgFeeProxy_caster
-setSmgFeeProxycaster_47:
+setSmgFeeProxycaster_48:
 proto 0 0
 bytec_0 // ""
 txna ApplicationArgs 1
 frame_bury 0
 frame_dig 0
-callsub setSmgFeeProxy_23
+callsub setSmgFeeProxy_24
 retsub
 
 // acquireReadySmgInfo_caster
-acquireReadySmgInfocaster_48:
+acquireReadySmgInfocaster_49:
 proto 0 0
 bytec_0 // ""
 dup
 txna ApplicationArgs 1
 frame_bury 1
 frame_dig 1
-callsub acquireReadySmgInfo_25
+callsub acquireReadySmgInfo_26
 frame_bury 0
 pushbytes 0x151f7c75 // 0x151f7c75
 frame_dig 0
@@ -2560,7 +2580,7 @@ log
 retsub
 
 // smgRelease_caster
-smgReleasecaster_49:
+smgReleasecaster_50:
 proto 0 0
 bytec_0 // ""
 dup
@@ -2599,22 +2619,22 @@ frame_dig 5
 frame_dig 6
 frame_dig 7
 frame_dig 8
-callsub smgRelease_26
+callsub smgRelease_27
 retsub
 
 // opt_in_token_id_caster
-optintokenidcaster_50:
+optintokenidcaster_51:
 proto 0 0
 intc_0 // 0
 txna ApplicationArgs 1
 btoi
 frame_bury 0
 frame_dig 0
-callsub optintokenid_27
+callsub optintokenid_28
 retsub
 
 // addTokenPair_caster
-addTokenPaircaster_51:
+addTokenPaircaster_52:
 proto 0 0
 intc_0 // 0
 dup
@@ -2639,22 +2659,22 @@ frame_dig 1
 frame_dig 2
 frame_dig 3
 frame_dig 4
-callsub addTokenPair_28
+callsub addTokenPair_29
 retsub
 
 // removeTokenPair_caster
-removeTokenPaircaster_52:
+removeTokenPaircaster_53:
 proto 0 0
 intc_0 // 0
 txna ApplicationArgs 1
 btoi
 frame_bury 0
 frame_dig 0
-callsub removeTokenPair_29
+callsub removeTokenPair_30
 retsub
 
 // updateTokenPair_caster
-updateTokenPaircaster_53:
+updateTokenPaircaster_54:
 proto 0 0
 intc_0 // 0
 dup
@@ -2679,11 +2699,11 @@ frame_dig 1
 frame_dig 2
 frame_dig 3
 frame_dig 4
-callsub updateTokenPair_30
+callsub updateTokenPair_31
 retsub
 
 // initialize_caster
-initializecaster_54:
+initializecaster_55:
 proto 0 0
 bytec_0 // ""
 dupn 4
@@ -2702,23 +2722,23 @@ frame_dig 1
 frame_dig 2
 frame_dig 3
 frame_dig 4
-callsub initialize_31
+callsub initialize_32
 retsub
 
 // update_caster
-updatecaster_55:
+updatecaster_56:
 proto 0 0
-callsub update_32
+callsub update_33
 retsub
 
 // delete_caster
-deletecaster_56:
+deletecaster_57:
 proto 0 0
-callsub delete_33
+callsub delete_34
 retsub
 
 // setStoremanGroupConfig_caster
-setStoremanGroupConfigcaster_57:
+setStoremanGroupConfigcaster_58:
 proto 0 0
 bytec_0 // ""
 intc_0 // 0
@@ -2744,11 +2764,11 @@ frame_dig 1
 frame_dig 2
 frame_dig 3
 frame_dig 4
-callsub setStoremanGroupConfig_34
+callsub setStoremanGroupConfig_35
 retsub
 
 // setStoremanGroupStatus_caster
-setStoremanGroupStatuscaster_58:
+setStoremanGroupStatuscaster_59:
 proto 0 0
 bytec_0 // ""
 intc_0 // 0
@@ -2760,5 +2780,5 @@ getbyte
 frame_bury 1
 frame_dig 0
 frame_dig 1
-callsub setStoremanGroupStatus_35
+callsub setStoremanGroupStatus_36
 retsub
